@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profile Settings</title>
+<script type="text/javascript" nonce="092ee82aabde47c2ad3d845d5de" src="//injections.adguard.org?ts=1774937672199&amp;type=content-script&amp;dmn=contribution.usercontent.google.com&amp;url=https%3A%2F%2Fcontribution.usercontent.google.com%2Fdownload%3Fc%3DCgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzE4YTdkMzU0N2E1MzQ5OWJiZDkyMTA3OTkwNmRmMWE0EgsSBxCb2MnlmRMYAZIBIwoKcHJvamVjdF9pZBIVQhM3ODg1NDg0MjgyOTYwMjk3MDE4%26filename%3D%26opi%3D89354086&amp;app=chrome.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=0&amp;stealth=1&amp;st-flash&amp;st-java&amp;st-dnt"></script><script type="text/javascript" nonce="092ee82aabde47c2ad3d845d5de" src="//injections.adguard.org?ts=1774937672199&amp;name=AdGuard%20Assistant&amp;type=user-script"></script><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-bright": "#f9f9f9",
+                        "secondary-fixed": "#dfe3e7",
+                        "primary": "#00658f",
+                        "secondary-container": "#dce0e5",
+                        "surface-variant": "#e2e2e2",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#c2c7cb",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#dadada",
+                        "surface": "#f9f9f9",
+                        "outline": "#6f7881",
+                        "on-tertiary-container": "#462a00",
+                        "background": "#f9f9f9",
+                        "surface-tint": "#00658f",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#42474b",
+                        "primary-fixed-dim": "#86cfff",
+                        "on-secondary-fixed": "#171c20",
+                        "surface-container-high": "#e8e8e8",
+                        "on-primary-fixed": "#001e2e",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#bec8d1",
+                        "on-tertiary-fixed": "#2a1700",
+                        "error": "#ba1a1a",
+                        "tertiary": "#855400",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-container-low": "#f3f3f3",
+                        "tertiary-fixed": "#ffddb7",
+                        "tertiary-fixed-dim": "#ffb95d",
+                        "on-surface": "#1a1c1c",
+                        "on-primary-fixed-variant": "#004c6d",
+                        "on-surface-variant": "#3e4850",
+                        "secondary": "#5a5f63",
+                        "surface-container": "#eeeeee",
+                        "tertiary-container": "#d18812",
+                        "primary-fixed": "#c8e6ff",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#24a1de",
+                        "inverse-on-surface": "#f1f1f1",
+                        "inverse-surface": "#2f3131",
+                        "on-primary-container": "#00344c",
+                        "inverse-primary": "#86cfff",
+                        "on-secondary-container": "#5e6367",
+                        "on-background": "#1a1c1c"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none transition-transform duration-200">
+<div class="flex items-center justify-between px-4 h-16 w-full">
+<div class="flex items-center gap-3">
+<button class="active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined text-on-surface-variant">arrow_back</span>
+</button>
+<h1 class="font-sans antialiased headline-sm font-semibold tracking-tight text-slate-900 dark:text-slate-50">Settings</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 rounded-full active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+</button>
+<button class="p-2 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 rounded-full active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined text-on-surface-variant">more_vert</span>
+</button>
+</div>
+</div>
+<div class="bg-slate-100 dark:bg-slate-800 h-[1px] w-full"></div>
+</header>
+<main class="pt-20 px-4 max-w-lg mx-auto space-y-6">
+<!-- Profile Section - Asymmetric Bento Style -->
+<section class="grid grid-cols-12 gap-4">
+<div class="col-span-12 bg-surface-container-lowest p-6 rounded-xl flex flex-col items-center text-center shadow-sm">
+<div class="relative mb-4">
+<img alt="Alex Harrison" class="w-24 h-24 rounded-full object-cover border-4 border-surface" data-alt="close-up portrait of a young creative professional with short dark hair, soft natural lighting, minimalist grey studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAq7f5mGKEPcGRD8JJaUkdiiNX6pyLQ0m-rE-Go-DWev1aJ5Cl_wuH92pAezx5SDYrXRiWGMHfeeF5hILRBOPIpSsN4rXLIDmsMcevm7y3HtizSObBJRCAW7Izg-dusMtskDTZuaZPSRTbf-f8EeCm-Z0QyMF1dYt3Widt9FC_SPV4LnZqL4PZSVybweJ0X2jFFlCYncHvxB3VTXuHSxXxKsRmpCywjKLgdkYTSTe_n63T8WtPZwFlPVsFVbPYdnScO3lzUQkRRkw"/>
+<div class="absolute bottom-0 right-0 bg-primary-container p-1.5 rounded-full border-2 border-white">
+<span class="material-symbols-outlined text-white text-[16px]" style="font-variation-settings: 'FILL' 1;">edit</span>
+</div>
+</div>
+<h2 class="text-xl font-bold tracking-tight text-on-surface">Alex Harrison</h2>
+<p class="text-primary font-medium text-sm mt-0.5">@alex_h_designs</p>
+<div class="flex flex-wrap justify-center gap-2 mt-4">
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-[11px] font-semibold rounded-full uppercase tracking-wider">Product Designer</span>
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-[11px] font-semibold rounded-full uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span> Berlin, DE
+                    </span>
+</div>
+</div>
+<!-- Stats/Status Cards -->
+<div class="col-span-6 bg-surface-container-low p-4 rounded-xl flex items-center gap-3">
+<div class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-tighter">Status</p>
+<p class="text-sm font-semibold text-on-surface">Pro Member</p>
+</div>
+</div>
+<div class="col-span-6 bg-surface-container-low p-4 rounded-xl flex items-center gap-3">
+<div class="bg-tertiary/10 p-2 rounded-lg text-tertiary">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-tighter">Rank</p>
+<p class="text-sm font-semibold text-on-surface">Top 1%</p>
+</div>
+</div>
+</section>
+<!-- Menu List -->
+<section class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
+<div class="px-4 py-2 text-[11px] font-bold text-primary uppercase tracking-widest bg-surface-container-low/50">Preferences</div>
+<button class="w-full flex items-center justify-between px-5 py-4 hover:bg-surface-bright active:scale-[0.99] transition-all">
+<div class="flex items-center gap-4">
+<div class="text-on-surface-variant opacity-70">
+<span class="material-symbols-outlined">notifications</span>
+</div>
+<span class="text-[15px] font-medium text-on-surface">Notifications</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[20px]">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between px-5 py-4 hover:bg-surface-bright active:scale-[0.99] transition-all">
+<div class="flex items-center gap-4">
+<div class="text-on-surface-variant opacity-70">
+<span class="material-symbols-outlined">lock</span>
+</div>
+<span class="text-[15px] font-medium text-on-surface">Privacy</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[20px]">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between px-5 py-4 hover:bg-surface-bright active:scale-[0.99] transition-all">
+<div class="flex items-center gap-4">
+<div class="text-on-surface-variant opacity-70">
+<span class="material-symbols-outlined">database</span>
+</div>
+<span class="text-[15px] font-medium text-on-surface">Data</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[20px]">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between px-5 py-4 hover:bg-surface-bright active:scale-[0.99] transition-all">
+<div class="flex items-center gap-4">
+<div class="text-on-surface-variant opacity-70">
+<span class="material-symbols-outlined">palette</span>
+</div>
+<span class="text-[15px] font-medium text-on-surface">Appearance</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-sm text-outline">Light</span>
+<span class="material-symbols-outlined text-outline-variant text-[20px]">chevron_right</span>
+</div>
+</button>
+<button class="w-full flex items-center justify-between px-5 py-4 hover:bg-surface-bright active:scale-[0.99] transition-all">
+<div class="flex items-center gap-4">
+<div class="text-on-surface-variant opacity-70">
+<span class="material-symbols-outlined">language</span>
+</div>
+<span class="text-[15px] font-medium text-on-surface">Language</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-sm text-outline">English</span>
+<span class="material-symbols-outlined text-outline-variant text-[20px]">chevron_right</span>
+</div>
+</button>
+</section>
+<!-- Danger Zone -->
+<section class="pt-4">
+<button class="w-full flex items-center justify-center gap-2 px-5 py-4 bg-error-container/10 border border-error/10 text-error font-semibold rounded-xl active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span>Log Out</span>
+</button>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 pb-safe bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg shadow-[0_-1px_3px_0_rgba(0,0,0,0.05)] border-t border-slate-200/50 dark:border-slate-800/50">
+<div class="flex justify-around items-center h-16 w-full px-6">
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:opacity-80 active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="text-[11px] font-medium leading-none">Chats</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:opacity-80 active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[11px] font-medium leading-none">Contacts</span>
+</a>
+<!-- Active State: Settings -->
+<a class="flex flex-col items-center gap-1 text-sky-600 dark:text-sky-400 hover:opacity-80 active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="settings" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="text-[11px] font-medium leading-none">Settings</span>
+</a>
+</div>
+</nav>
+</body></html>

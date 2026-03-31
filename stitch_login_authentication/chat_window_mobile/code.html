@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<script type="text/javascript" nonce="092ee82aabde47c2ad3d845d5de" src="//injections.adguard.org?ts=1774937672199&amp;type=content-script&amp;dmn=contribution.usercontent.google.com&amp;url=https%3A%2F%2Fcontribution.usercontent.google.com%2Fdownload%3Fc%3DCgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2FiYTNjYzIwMWM3YjQxNjI5MzBmZGQxMjY5NTc4M2U1EgsSBxCb2MnlmRMYAZIBIwoKcHJvamVjdF9pZBIVQhM3ODg1NDg0MjgyOTYwMjk3MDE4%26filename%3D%26opi%3D89354086&amp;app=chrome.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=0&amp;stealth=1&amp;st-flash&amp;st-java&amp;st-dnt"></script><script type="text/javascript" nonce="092ee82aabde47c2ad3d845d5de" src="//injections.adguard.org?ts=1774937672199&amp;name=AdGuard%20Assistant&amp;type=user-script"></script><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .glass-header {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-bright": "#f9f9f9",
+                        "secondary-fixed": "#dfe3e7",
+                        "primary": "#00658f",
+                        "secondary-container": "#dce0e5",
+                        "surface-variant": "#e2e2e2",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#c2c7cb",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#dadada",
+                        "surface": "#f9f9f9",
+                        "outline": "#6f7881",
+                        "on-tertiary-container": "#462a00",
+                        "background": "#f9f9f9",
+                        "surface-tint": "#00658f",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#42474b",
+                        "primary-fixed-dim": "#86cfff",
+                        "on-secondary-fixed": "#171c20",
+                        "surface-container-high": "#e8e8e8",
+                        "on-primary-fixed": "#001e2e",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#bec8d1",
+                        "on-tertiary-fixed": "#2a1700",
+                        "error": "#ba1a1a",
+                        "tertiary": "#855400",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-container-low": "#f3f3f3",
+                        "tertiary-fixed": "#ffddb7",
+                        "tertiary-fixed-dim": "#ffb95d",
+                        "on-surface": "#1a1c1c",
+                        "on-primary-fixed-variant": "#004c6d",
+                        "on-surface-variant": "#3e4850",
+                        "secondary": "#5a5f63",
+                        "surface-container": "#eeeeee",
+                        "tertiary-container": "#d18812",
+                        "primary-fixed": "#c8e6ff",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#24a1de",
+                        "inverse-on-surface": "#f1f1f1",
+                        "inverse-surface": "#2f3131",
+                        "on-primary-container": "#00344c",
+                        "inverse-primary": "#86cfff",
+                        "on-secondary-container": "#5e6367",
+                        "on-background": "#1a1c1c"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col">
+<!-- Top Navigation Shell (Suppressed Nav Shell as per "Task-Focused" rule, rendering custom detail header) -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm">
+<div class="flex items-center justify-between px-4 h-16 w-full max-w-4xl mx-auto">
+<div class="flex items-center gap-3">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors active:scale-95">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<div class="flex items-center gap-3 cursor-pointer">
+<img alt="Julian Wan" class="w-10 h-10 rounded-full object-cover ring-1 ring-outline-variant/20" data-alt="Close-up portrait of a professional young man with short dark hair and a confident expression in soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRILgDHhjVQtAAv_0vQPdMvZTfzogWn42U-WnN8Pp3vufeK32ydxoDh1MggerkFYulhsZ-CMyaCeeXfx9jmLehW3vtd5M1yJR1eXoSsyJdC4V4BogR9_XPiLWeWN-PVq2j2if1E6htwnj06kceVOEfKs9s01D-q6CM2Ktf7NS4K9uefkfNGUUJW2tQpRd8xnxoldgHvXH9zyKEnMaddKEqBM1IlP-NsvNj3rG_OHtbkOGqzqtA-jz7sM6JHtPC5b0XzIM8o_2WxvQ"/>
+<div class="flex flex-col">
+<span class="font-sans antialiased text-sm font-semibold tracking-tight text-on-surface">Julian Wan</span>
+<span class="text-[11px] text-primary font-medium">online</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors active:scale-95">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="search">search</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors active:scale-95">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+<div class="bg-slate-100 dark:bg-slate-800 h-[1px] w-full"></div>
+</header>
+<!-- Main Chat Canvas -->
+<main class="flex-1 overflow-y-auto pt-20 pb-24 px-4 max-w-4xl mx-auto w-full flex flex-col gap-6 hide-scrollbar">
+<!-- Date Marker -->
+<div class="flex justify-center">
+<span class="px-3 py-1 bg-surface-container-high/50 text-on-surface-variant text-[11px] font-medium rounded-full backdrop-blur-sm">
+                Today
+            </span>
+</div>
+<!-- Incoming Message Bubble -->
+<div class="flex flex-col gap-1 max-w-[85%] self-start">
+<div class="bg-surface-container-lowest text-on-surface px-4 py-2.5 rounded-lg rounded-bl-sm shadow-sm ring-1 ring-outline-variant/10">
+<p class="body-md leading-relaxed text-[14px]">Hey! Have you seen the latest design specs for the atrium project?</p>
+<div class="flex justify-end mt-1">
+<span class="text-[10px] text-outline">10:42 AM</span>
+</div>
+</div>
+</div>
+<!-- Outgoing Message Bubble -->
+<div class="flex flex-col gap-1 max-w-[85%] self-end">
+<div class="bg-primary-container text-on-primary px-4 py-2.5 rounded-lg rounded-br-sm shadow-sm">
+<p class="body-md leading-relaxed text-[14px]">Not yet, just getting into the office. Are they in the shared folder?</p>
+<div class="flex justify-end items-center gap-1 mt-1">
+<span class="text-[10px] opacity-80">10:43 AM</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">done_all</span>
+</div>
+</div>
+</div>
+<!-- Incoming Image Message -->
+<div class="flex flex-col gap-1 max-w-[85%] self-start">
+<div class="bg-surface-container-lowest p-1 rounded-lg rounded-bl-sm shadow-sm ring-1 ring-outline-variant/10">
+<img alt="Design Spec Image" class="w-full aspect-video object-cover rounded-md mb-1" data-alt="A minimalist high-end office lobby with floor-to-ceiling windows, marble floors, and modern architectural furniture in natural daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBkdbiwbZle6eI3HdyPNFwtFhwjmzf94_0FKw8dmMXYRsBAIghfEHBVU-bBPJrWVWSFCqwT4-QhMvR1fx5wG-zprJtbF9nF3HJi62RC-g6LUPS-KUPkx3MSzR5QGfKk3iKBEakoUtCPmTZzIe3t65SUlDFc1Q96h4Gt84CPNdUxacRirLoYYr6LgLAwr62ddUWkZ9QlD3HxgKMqL8dLgwxNaBw2MU3kVrDC7cVLt4Zv47jWSMJ3F4wXo7EjYaxK15FmpXgJ_yTrqQ"/>
+<div class="px-3 py-1.5">
+<p class="body-md leading-relaxed text-[14px]">Check out this moodboard for the lobby. I think it captures the "Digital Atrium" vibe perfectly.</p>
+<div class="flex justify-end mt-1">
+<span class="text-[10px] text-outline">10:45 AM</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Outgoing Sticker/Emoji -->
+<div class="self-end mr-2">
+<div class="relative group">
+<span class="text-6xl select-none">🔥</span>
+<div class="absolute -bottom-4 right-0 flex items-center gap-1">
+<span class="text-[10px] text-outline">10:46 AM</span>
+<span class="material-symbols-outlined text-[14px] text-primary" style="font-variation-settings: 'FILL' 1;">done_all</span>
+</div>
+</div>
+</div>
+<!-- Incoming Message Bubble (Sequential) -->
+<div class="flex flex-col gap-1 max-w-[85%] self-start">
+<div class="bg-surface-container-lowest text-on-surface px-4 py-2.5 rounded-lg rounded-bl-sm shadow-sm ring-1 ring-outline-variant/10">
+<p class="body-md leading-relaxed text-[14px]">I'm working on the refined navigation components now. Will send over a prototype link in a bit!</p>
+<div class="flex justify-end mt-1">
+<span class="text-[10px] text-outline">10:48 AM</span>
+</div>
+</div>
+</div>
+<!-- Outgoing Message Bubble (Short) -->
+<div class="flex flex-col gap-1 max-w-[85%] self-end">
+<div class="bg-primary-container text-on-primary px-4 py-2 rounded-lg rounded-br-sm shadow-sm">
+<p class="body-md text-[14px]">Sounds great! 🚀</p>
+<div class="flex justify-end items-center gap-1 mt-0.5">
+<span class="text-[10px] opacity-80">10:49 AM</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">done_all</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Action Bar / Message Input -->
+<footer class="fixed bottom-0 w-full z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg pb-safe border-t border-slate-200/50">
+<div class="flex items-end gap-2 p-3 max-w-4xl mx-auto w-full">
+<!-- Attachment Button -->
+<button class="flex-shrink-0 w-11 h-11 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors active:scale-90">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="attach_file">attach_file</span>
+</button>
+<!-- Input Container -->
+<div class="flex-1 flex items-center bg-surface-container-low rounded-2xl px-3 py-1.5 min-h-[44px] ring-1 ring-outline-variant/20 focus-within:ring-primary/30 transition-all">
+<button class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="sentiment_satisfied">sentiment_satisfied</span>
+</button>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-[15px] px-2 py-1 text-on-surface placeholder:text-on-surface-variant/50" placeholder="Message" type="text"/>
+</div>
+<!-- Voice/Send Action -->
+<button class="flex-shrink-0 w-11 h-11 flex items-center justify-center rounded-full bg-primary text-on-primary shadow-lg shadow-primary/20 hover:opacity-90 active:scale-90 transition-all duration-150">
+<!-- Logic: Toggle between 'mic' and 'send' based on input state (represented as 'mic' by default) -->
+<span class="material-symbols-outlined" data-icon="mic" style="font-variation-settings: 'FILL' 1;">mic</span>
+</button>
+</div>
+</footer>
+</body></html>

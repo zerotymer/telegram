@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script type="text/javascript" nonce="092ee82aabde47c2ad3d845d5de" src="//injections.adguard.org?ts=1774937672199&amp;type=content-script&amp;dmn=contribution.usercontent.google.com&amp;url=https%3A%2F%2Fcontribution.usercontent.google.com%2Fdownload%3Fc%3DCgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzFjMThmMWUzYTdmMzRlZDI4YjI0OTI2MWE2OTJlMjJiEgsSBxCb2MnlmRMYAZIBIwoKcHJvamVjdF9pZBIVQhM3ODg1NDg0MjgyOTYwMjk3MDE4%26filename%3D%26opi%3D89354086&amp;app=chrome.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=0&amp;stealth=1&amp;st-flash&amp;st-java&amp;st-dnt"></script><script type="text/javascript" nonce="092ee82aabde47c2ad3d845d5de" src="//injections.adguard.org?ts=1774937672199&amp;name=AdGuard%20Assistant&amp;type=user-script"></script><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary": "#5a5f63",
+              "on-error": "#ffffff",
+              "background": "#f9f9f9",
+              "tertiary-container": "#d18812",
+              "tertiary": "#855400",
+              "error-container": "#ffdad6",
+              "on-primary-container": "#00344c",
+              "surface-container-low": "#f3f3f3",
+              "primary": "#00658f",
+              "tertiary-fixed-dim": "#ffb95d",
+              "surface-container-lowest": "#ffffff",
+              "outline": "#6f7881",
+              "inverse-primary": "#86cfff",
+              "surface-bright": "#f9f9f9",
+              "secondary-fixed": "#dfe3e7",
+              "on-tertiary-fixed": "#2a1700",
+              "on-error-container": "#93000a",
+              "surface": "#f9f9f9",
+              "surface-variant": "#e2e2e2",
+              "surface-tint": "#00658f",
+              "on-primary-fixed-variant": "#004c6d",
+              "on-primary-fixed": "#001e2e",
+              "tertiary-fixed": "#ffddb7",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-container": "#462a00",
+              "primary-fixed-dim": "#86cfff",
+              "on-secondary-container": "#5e6367",
+              "surface-container-highest": "#e2e2e2",
+              "on-tertiary-fixed-variant": "#653e00",
+              "on-surface-variant": "#3e4850",
+              "on-secondary-fixed": "#171c20",
+              "secondary-container": "#dce0e5",
+              "on-primary": "#ffffff",
+              "on-background": "#1a1c1c",
+              "error": "#ba1a1a",
+              "on-surface": "#1a1c1c",
+              "on-secondary-fixed-variant": "#42474b",
+              "on-secondary": "#ffffff",
+              "inverse-surface": "#2f3131",
+              "surface-container-high": "#e8e8e8",
+              "secondary-fixed-dim": "#c2c7cb",
+              "surface-container": "#eeeeee",
+              "outline-variant": "#bec8d1",
+              "primary-fixed": "#c8e6ff",
+              "surface-dim": "#dadada",
+              "inverse-on-surface": "#f1f1f1",
+              "primary-container": "#24a1de"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9f9;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased overflow-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-40 bg-[#ffffffcc] dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none transition-all duration-200 ease-in-out">
+<div class="flex justify-between items-center px-4 h-16 w-full">
+<div class="flex items-center gap-3">
+<span class="text-lg font-black tracking-tighter text-[#1a1c1c] dark:text-white">Digital Atrium</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 rounded-lg transition-all">
+<span class="material-symbols-outlined text-[#00658f] dark:text-[#24a1de]" data-icon="search">search</span>
+</button>
+<button class="p-2 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 rounded-lg transition-all">
+<span class="material-symbols-outlined text-[#00658f] dark:text-[#24a1de]" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Segmented Control for Filter -->
+<div class="flex px-4 pb-2 gap-6 overflow-x-auto hide-scrollbar Inter body-md font-medium">
+<a class="text-[#00658f] border-b-2 border-[#00658f] pb-2 whitespace-nowrap" href="#">All</a>
+<a class="text-slate-500 hover:text-[#1a1c1c] whitespace-nowrap" href="#">Personal</a>
+<a class="text-slate-500 hover:text-[#1a1c1c] whitespace-nowrap" href="#">Groups</a>
+<a class="text-slate-500 hover:text-[#1a1c1c] whitespace-nowrap" href="#">Channels</a>
+</div>
+</header>
+<!-- Main Content: Chat List -->
+<main class="pt-28 pb-20 h-screen overflow-y-auto bg-surface">
+<div class="flex flex-col">
+<!-- Chat Item 1: Active/Pinned -->
+<div class="relative px-4 py-3 flex items-center gap-4 hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="absolute left-0 w-1 h-10 bg-primary rounded-r-full"></div>
+<div class="relative flex-shrink-0">
+<img alt="Elena Profile" class="w-14 h-14 rounded-full object-cover" data-alt="portrait of a professional woman with a warm smile in soft studio lighting, clean minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqQQwTZJCQMPMo4jIJND5Bnf-Lp9c4RNLu8Re1WUnbw5vLiBcz7SF2VkD89Dm2wm_YSWihpgDq4Lffac13hMgnL3TpQpRP14zCOt4tcpJFV5ILrfsuAJLVhtc4Dh5ke3w3Kd2XBXdX4H1_cyJNMgAqU2Eg34zCA8mjC8F89ooMZhfqn53jUmikIoBtV2SHtstE-vdTxYV-MX8kpuWNvi2DkNHriOyqxzQoP5Y9E5_Or0o7I1mqrPxnBIMi9yBjwZa3br78WowWi-U"/>
+<div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-green-500 border-2 border-surface rounded-full"></div>
+</div>
+<div class="flex-grow min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<h3 class="font-semibold text-on-surface truncate">Elena Vance</h3>
+<span class="text-[11px] font-medium text-outline">10:42 AM</span>
+</div>
+<div class="flex justify-between items-center">
+<p class="text-sm text-on-surface-variant truncate pr-4">Did you check the latest design atriums for the project? It looks incredible.</p>
+<div class="bg-primary text-on-primary text-[10px] font-bold px-1.5 py-0.5 rounded-full">2</div>
+</div>
+</div>
+</div>
+<!-- Chat Item 2 -->
+<div class="px-4 py-3 flex items-center gap-4 hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="relative flex-shrink-0">
+<img alt="Marcus Profile" class="w-14 h-14 rounded-full object-cover" data-alt="close-up of a stylish man with glasses looking thoughtfully at the camera, urban office setting in soft focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMhvKR8PuWPxw0kzHtk1oprqyLJJuAGEa3TURmuUWJhzfF17L233Q1wvxJM6rOyBrFkEHS3VHV0fCvc1KEHQw8crVXUmbP3yd-9pRWM3UaWJWQLuqGwEaNDoAjfwijZJ4w-Tqvxn78UK_wzd7IfdT1AfxLAkkI5YzdHEh58Ygl_dPqA0aY2QM2J37LrwP1QL9JajK4C_7btvSoiA6jBgKQdBTUiJYvis1Y8YC8FmMh1pgU-Xj3BTVH1ao3yzFOQ8ajhWfjjkV6vt8"/>
+</div>
+<div class="flex-grow min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<h3 class="font-semibold text-on-surface truncate">Marcus Chen</h3>
+<span class="text-[11px] font-medium text-outline">09:15 AM</span>
+</div>
+<div class="flex justify-between items-center">
+<p class="text-sm text-on-surface-variant truncate">The server migration is complete. All assets are online.</p>
+<span class="material-symbols-outlined text-primary text-[16px]" data-icon="done_all" style="font-variation-settings: 'FILL' 1;">done_all</span>
+</div>
+</div>
+</div>
+<!-- Chat Item 3: Group -->
+<div class="px-4 py-3 flex items-center gap-4 hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="relative flex-shrink-0 flex items-center justify-center w-14 h-14 rounded-full bg-tertiary-fixed text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-2xl" data-icon="group">group</span>
+</div>
+<div class="flex-grow min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<h3 class="font-semibold text-on-surface truncate">Design Leadership Hub</h3>
+<span class="text-[11px] font-medium text-outline">Yesterday</span>
+</div>
+<div class="flex justify-between items-center">
+<p class="text-sm text-on-surface-variant truncate"><span class="text-primary font-medium">Sarah:</span> Can we review the typography hierarchy?</p>
+</div>
+</div>
+</div>
+<!-- Chat Item 4 -->
+<div class="px-4 py-3 flex items-center gap-4 hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="relative flex-shrink-0">
+<img alt="Jordan Profile" class="w-14 h-14 rounded-full object-cover" data-alt="portrait of an elegant creative director in a minimalist white studio, natural morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8X_uRS_l6ci5ZH0pCQsKuS2_mmdZK1ojBZS5HzjTJAQ7Wircqrrv2uOXNvHGCuHpr_5LuBt2RuacM2bi7jJEHT84XHDtDyt656-qujKM7bl-d2twD6d0wQn1VXDcVDx-IFEsMrtosTJCC2xH5UOyPGqJpy9SHnXHniCWhBysppVWVXugH-ywkmFhJtE2DVuBrtzzW76zW95NEjk4fXBfSglk8dh71SBAJcSpAOHVDHtY1iG4pMax8Y_RqDHzPfake-Jye4H3JGuY"/>
+</div>
+<div class="flex-grow min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<h3 class="font-semibold text-on-surface truncate">Jordan Smith</h3>
+<span class="text-[11px] font-medium text-outline">Yesterday</span>
+</div>
+<div class="flex justify-between items-center">
+<p class="text-sm text-on-surface-variant truncate pr-4">Great work on the atrium prototype! Let's present it Monday.</p>
+</div>
+</div>
+</div>
+<!-- Chat Item 5: Muted/Archived feel -->
+<div class="px-4 py-3 flex items-center gap-4 hover:bg-surface-container-high transition-colors cursor-pointer opacity-70">
+<div class="relative flex-shrink-0 flex items-center justify-center w-14 h-14 rounded-full bg-surface-container-highest text-secondary">
+<span class="material-symbols-outlined text-2xl" data-icon="archive">archive</span>
+</div>
+<div class="flex-grow min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<h3 class="font-semibold text-on-surface truncate">Archived Messages</h3>
+<span class="text-[11px] font-medium text-outline">Monday</span>
+</div>
+<div class="flex justify-between items-center">
+<p class="text-sm text-on-surface-variant truncate">Project Zenith, Launch Plans...</p>
+</div>
+</div>
+</div>
+<!-- More placeholders to show scroll -->
+<div class="px-4 py-3 flex items-center gap-4 hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="relative flex-shrink-0">
+<img alt="Alex Profile" class="w-14 h-14 rounded-full object-cover" data-alt="young male designer with a focused expression, wearing a neutral tone sweater, blurred office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI9e_TZrRYnyQRqTqf4Jjlsw__1SQFeSqWLkDHv2-hrZR7JAnlPJ55leFk8EjMIgaYszpeQxbedmXZrla-ohg-3udzhlS2wFmVgC-Pv27YZJ5Uf5QN5LsTuFEIiUiHX5pod1pHPaOrLClkxpp9BDjVAQ_oys33-ZaW00E0dJYyiGwUI0gM2aGKeGrp2ehwnppzo4r_pm57UkYNpwUAF_Xh-qzzPUen13Oc8xUv3RDmcNZ3IekThmk0-T_mPuc5U6_5CGS1TpG5y8o"/>
+</div>
+<div class="flex-grow min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<h3 class="font-semibold text-on-surface truncate">Alex Rivera</h3>
+<span class="text-[11px] font-medium text-outline">Monday</span>
+</div>
+<div class="flex justify-between items-center">
+<p class="text-sm text-on-surface-variant truncate">Sent a photo</p>
+<span class="material-symbols-outlined text-outline text-[16px]" data-icon="image">image</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button (FAB) -->
+<button class="fixed bottom-20 right-6 w-14 h-14 bg-gradient-to-br from-[#00658f] to-[#24a1de] text-white rounded-full flex items-center justify-center shadow-xl active:scale-95 transition-all duration-150 z-50">
+<span class="material-symbols-outlined text-3xl" data-icon="edit">edit</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-16 pb-safe px-6 bg-[#ffffffcc] dark:bg-slate-900/90 backdrop-blur-md border-t border-slate-100 dark:border-slate-800 shadow-[0_-4px_10px_rgba(0,0,0,0.05)] z-50">
+<a class="flex flex-col items-center justify-center bg-[#24a1de20] text-[#00658f] dark:text-[#24a1de] rounded-xl px-4 py-1 transition-all scale-90 duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<span class="Inter text-[11px] font-semibold mt-0.5">Chats</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 active:bg-slate-100 dark:active:bg-slate-800 transition-all scale-90 duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+<span class="Inter text-[11px] font-semibold mt-0.5">Calls</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 active:bg-slate-100 dark:active:bg-slate-800 transition-all scale-90 duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="Inter text-[11px] font-semibold mt-0.5">Settings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 active:bg-slate-100 dark:active:bg-slate-800 transition-all scale-90 duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="Inter text-[11px] font-semibold mt-0.5">Profile</span>
+</a>
+</nav>
+</body></html>
