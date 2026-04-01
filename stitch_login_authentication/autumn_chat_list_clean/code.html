@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>MapleGram - Chat</title>
+<script type="text/javascript" nonce="5e6c1902a64248c29ba77d87da3" src="//injections.adguard.org?ts=1775003536405&amp;type=content-script&amp;dmn=contribution.usercontent.google.com&amp;url=https%3A%2F%2Fcontribution.usercontent.google.com%2Fdownload%3Fc%3DCgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzgxZDE2NDU5ZWI5OTQzOTRhODUyNGE4MjFmMzExZGRiEgsSBxCb2MnlmRMYAZIBIwoKcHJvamVjdF9pZBIVQhM3ODg1NDg0MjgyOTYwMjk3MDE4%26filename%3D%26opi%3D89354086&amp;app=chrome.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=0&amp;stealth=1&amp;st-flash&amp;st-java&amp;st-dnt"></script><script type="text/javascript" nonce="5e6c1902a64248c29ba77d87da3" src="//injections.adguard.org?ts=1775003536405&amp;name=AdGuard%20Assistant&amp;type=user-script"></script><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed": "#ffdad6",
+              "tertiary-fixed-dim": "#f6be3b",
+              "on-background": "#2c160e",
+              "surface-container-low": "#fff1ed",
+              "on-secondary": "#ffffff",
+              "inverse-on-surface": "#ffede8",
+              "surface-dim": "#fbd1c4",
+              "on-tertiary": "#ffffff",
+              "on-error-container": "#93000a",
+              "tertiary-container": "#775700",
+              "outline-variant": "#e2beba",
+              "on-secondary-fixed": "#321200",
+              "surface-container": "#ffe9e3",
+              "surface-container-lowest": "#ffffff",
+              "secondary": "#9a4600",
+              "surface-container-highest": "#ffdbd0",
+              "surface-container-high": "#ffe2da",
+              "inverse-surface": "#442a22",
+              "surface": "#fff8f6",
+              "on-secondary-container": "#672c00",
+              "secondary-container": "#fd8a3e",
+              "primary-fixed-dim": "#ffb4ac",
+              "on-secondary-fixed-variant": "#763400",
+              "outline": "#8e706d",
+              "surface-variant": "#ffdbd0",
+              "error-container": "#ffdad6",
+              "background": "#fff8f6",
+              "on-tertiary-fixed-variant": "#5c4300",
+              "on-primary-container": "#ffc8c2",
+              "surface-bright": "#fff8f6",
+              "on-error": "#ffffff",
+              "primary-container": "#b22222",
+              "error": "#ba1a1a",
+              "secondary-fixed": "#ffdbc9",
+              "on-tertiary-fixed": "#261900",
+              "tertiary-fixed": "#ffdea0",
+              "surface-tint": "#b52424",
+              "inverse-primary": "#ffb4ac",
+              "on-surface": "#2c160e",
+              "on-primary-fixed-variant": "#92030f",
+              "on-primary": "#ffffff",
+              "on-surface-variant": "#5a403e",
+              "primary": "#8f000d",
+              "on-tertiary-container": "#ffce67",
+              "tertiary": "#594100",
+              "on-primary-fixed": "#410003",
+              "secondary-fixed-dim": "#ffb68d"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fff8f6;
+            color: #2c160e;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-stone-50/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(44,22,14,0.06)] flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="text-red-900 dark:text-red-400 hover:bg-red-50/50 dark:hover:bg-red-900/20 transition-colors rounded-full p-2 active:scale-95 active:duration-150">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-xl font-bold tracking-tighter text-red-900 dark:text-red-400 font-sans tracking-tight">MapleGram</h1>
+</div>
+<div class="flex items-center">
+<button class="text-red-900 dark:text-red-400 hover:bg-red-50/50 dark:hover:bg-red-900/20 transition-colors rounded-full p-2 active:scale-95 active:duration-150">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</header>
+<main class="pt-20 pb-24 px-4 max-w-md mx-auto">
+<!-- Story/Active Users Horizontal Section -->
+<section class="mb-8 overflow-hidden">
+<h2 class="text-xs font-bold uppercase tracking-[0.2em] text-on-surface-variant mb-4 px-2">Recent Stories</h2>
+<div class="flex gap-4 overflow-x-auto hide-scrollbar pb-2">
+<div class="flex flex-col items-center gap-2 flex-shrink-0">
+<div class="p-1 rounded-full border-2 border-primary ring-2 ring-background">
+<img alt="" class="w-14 h-14 rounded-full object-cover" data-alt="portrait of a woman with warm lighting and autumn foliage background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQWuy_kf20CbBNhCWaZ3kA3228fTtyEL0stxQWol7qtnyBm90b83o7E9Q8jnY0xveURempZViOiWDKVDj-lhF4gx2Xkmwog0VPD2qmfMIk2lvtSxPFgn7vjc7AMiDhVe1w-8javKCbNZ1wmuq6f4QQGqoHuKJ1lQY2NZd7YcmApllIw1HGkW-8AVTKe9z2UvbmUApaOmHqOLXq-V6_wO3u8L0aqWffLetnEE_7aWJzOYgPfZvz0wqSpMU74Z2Y8kCHTUKg3hqjpAs"/>
+</div>
+<span class="text-[10px] font-semibold text-on-surface">You</span>
+</div>
+<!-- Active users -->
+<div class="flex flex-col items-center gap-2 flex-shrink-0">
+<div class="p-1 rounded-full border-2 border-secondary ring-2 ring-background relative">
+<img alt="" class="w-14 h-14 rounded-full object-cover" data-alt="man in a rustic wool sweater smiling in a sunlit forest glade" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrkqONz0JDTRps4CQG_FNIgAWZMuYqxP2btMNu61jIsTOgCBlID_VQ7-Lpo-VsA8yWT6vfGgyIznmbffJ2egJvuwg-aL-jG81YC3dP8L0u7PflL63MjmaNnSFZ9UJjF2BwjLVyA72i4Ll-JhKaWYedjDsmE8VNhWk7Su-I9AKFnDbXiQZAX4ZefGXb-sKtg3OiRm94fmtbkh1w5CUG0TyUCiOhJ-n9DIUC9-fscMV8u2FlODCN6Qb5pKk7nYUhXBxaRknIlzkcHJE"/>
+<div class="absolute bottom-0 right-0 w-4 h-4 bg-tertiary-fixed rounded-full border-2 border-background"></div>
+</div>
+<span class="text-[10px] font-semibold text-on-surface">Elias</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-shrink-0">
+<div class="p-1 rounded-full border-2 border-secondary ring-2 ring-background">
+<img alt="" class="w-14 h-14 rounded-full object-cover" data-alt="woman laughing with warm autumn sun highlighting her hair, rustic aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwJKFEWyIGKZDrruWk4Ea8Yads0FdPsiw49XTJNeKziCaRT7cCkBkAex3v9xIsZ4l6Q66O4Pb34TCLGWcIQ9oinC9_zG8JcKeZIav205GbwIsfcdtaNNa_rIb6rE26ORVNGj_eggS_45QIXoOnkWYzNMNlK2rzcBt2RE8FFDbQrJbpa4Zm-ixbhkW3qqzdVUE0Fvrbsz9Qnu7C-HJztZg4SJRFXF0QFOiE4LX-9weOtCJtRMt9-mq1dVh3K8AJvWL6HVJf9VVoKBg"/>
+</div>
+<span class="text-[10px] font-semibold text-on-surface">Sarah</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-shrink-0">
+<div class="p-1 rounded-full border-2 border-secondary ring-2 ring-background">
+<img alt="" class="w-14 h-14 rounded-full object-cover" data-alt="man outdoors with organic earth tones clothing and soft depth of field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtnVsxD6E95RAn3-9amchJydQUc3gLWcGhMQFjg-BE1GxRdHUIkuONmka8D5WrMB8tz1iHqcw5-oZvLcbBSPHaGlrY3PVOGNiflOIhUnHrpY8FBFN7ZFDhWY8N1K5Ct1x40DvdvAc--n5KFKuGFCYe_HvTm21VsEre_itFnaVwEQJNdBaHYKk5yfE0XjSk-Dw4AJpUOHCO7CKQZJgnpxKwu4fkA8kV5rfEIHKuIJfP-n-FBNJgYwfcyxrVK2dCr3zhwgwPhZXrLj4"/>
+</div>
+<span class="text-[10px] font-semibold text-on-surface">Julian</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-shrink-0">
+<div class="p-1 rounded-full border-2 border-secondary ring-2 ring-background">
+<img alt="" class="w-14 h-14 rounded-full object-cover" data-alt="woman in a cozy orange scarf standing in a park with fallen maple leaves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOFSMkxcIWok1n4poNPYm0unmDbt2aJ4vgYcuIZal3N_Nc1q8wEdj6xCfflzdT4oeJorWaiSt2guurgaKWAt22OtIwFIkE6BersefsYVPKdBugvD6ZFuf07N6X_fWVVQa2y4Hf4Yya-74IGA0ySO82zYBXfdp2FWJgOtf0-pF8dDUH6eWC74qy88bzkYgFXVXbk8uco8BM5D6InXUY3HQMrzkZAUAg7dGHgrrAIewakQznkS1NlVys3naZbGvBKIW62hi66L5NjUo"/>
+</div>
+<span class="text-[10px] font-semibold text-on-surface">Maya</span>
+</div>
+</div>
+</section>
+<!-- Chat List Section -->
+<section class="space-y-1">
+<h2 class="text-xs font-bold uppercase tracking-[0.2em] text-on-surface-variant mb-4 px-2">Messages</h2>
+<!-- Chat Card 1 -->
+<div class="group flex items-center gap-4 p-4 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-colors cursor-pointer relative overflow-hidden">
+<div class="relative flex-shrink-0">
+<img alt="" class="w-12 h-12 rounded-full object-cover" data-alt="professional male portrait with warm lighting and brown wooden background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnfFHx-8kFuvPDxPTuJhYmVHpwK16pvQcAHkn5q1iHIoBdKcOy84ERQN-c3_sQR11W9J78WqQp4SHf6R2plksrdbeN7JD3frCERokAmnfFrZMYOxKf3dsfwwDv3cJlWOqhPHRDeM4yX8lfV8_FL9KzCjfGYVeEptG8ehw15ALZh4tT4mJbDvU-amPG_dK39WkMKuVkz_3Kt4RORN6BT_xGqO52wztGJEjNKoefP0L5-jzkOmJuEIaSrVns9k9hbp7Z6pFhf363B0A"/>
+<div class="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-tertiary-fixed rounded-full border-2 border-surface-container-low group-hover:border-surface-container-high transition-colors"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline">
+<h3 class="text-[15px] font-bold text-on-surface truncate">Elias Thorne</h3>
+<span class="text-[11px] text-on-surface-variant font-medium">10:42 AM</span>
+</div>
+<p class="text-[13px] text-on-surface-variant truncate font-medium mt-0.5">The cabin is booked for the weekend! 🍂</p>
+</div>
+<div class="flex flex-col items-end gap-1">
+<div class="w-5 h-5 bg-primary text-on-primary text-[10px] font-bold rounded-full flex items-center justify-center">2</div>
+</div>
+</div>
+<!-- Chat Card 2 -->
+<div class="group flex items-center gap-4 p-4 rounded-xl hover:bg-surface-container transition-colors cursor-pointer">
+<div class="flex-shrink-0">
+<img alt="" class="w-12 h-12 rounded-full object-cover" data-alt="woman smiling against a background of orange and red autumn leaves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_ion3WENvetExpGxTyy21BpnR94C82SQUoasy13wUbiSS4-_MccJu7AzLEBxhMqJugXVctMwEBJuAoq0Xo6SVM6M0ht6MkBvTGtqvQkkgzuwX3giqQpP4dKp6A543OBEBx_n2GFsR-1BeONy71Ke6B54zJdYe5hiAQO-_oqdH6KHaTi12ouEvGf-z7NFRu6GOylq3ysYqZLQucWsFgbfBZdzewO0MzIYUMcWnqtMtn9tmbaJhSjvhjwHoyrkIpz3_gLpsNuZ_g9A"/>
+</div>
+<div class="flex-1 min-w-0 border-b border-outline-variant/10 pb-1">
+<div class="flex justify-between items-baseline">
+<h3 class="text-[15px] font-bold text-on-surface truncate">Maya Jenkins</h3>
+<span class="text-[11px] text-on-surface-variant">Yesterday</span>
+</div>
+<p class="text-[13px] text-on-surface-variant/70 truncate mt-0.5">Did you see the photography exhibit?</p>
+</div>
+</div>
+<!-- Chat Card 3 -->
+<div class="group flex items-center gap-4 p-4 rounded-xl hover:bg-surface-container transition-colors cursor-pointer">
+<div class="flex-shrink-0">
+<div class="w-12 h-12 rounded-full bg-secondary-container/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" data-icon="groups">groups</span>
+</div>
+</div>
+<div class="flex-1 min-w-0 border-b border-outline-variant/10 pb-1">
+<div class="flex justify-between items-baseline">
+<h3 class="text-[15px] font-bold text-on-surface truncate">The Trail Blazers</h3>
+<span class="text-[11px] text-on-surface-variant">Yesterday</span>
+</div>
+<p class="text-[13px] text-on-surface-variant/70 truncate mt-0.5"><span class="font-bold text-on-surface">Julian:</span> I'm bringing the thermal flasks.</p>
+</div>
+</div>
+<!-- Chat Card 4 -->
+<div class="group flex items-center gap-4 p-4 rounded-xl hover:bg-surface-container transition-colors cursor-pointer">
+<div class="flex-shrink-0">
+<img alt="" class="w-12 h-12 rounded-full object-cover" data-alt="close up portrait of a man in natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxmKcAGhU1SdnKcqh3H0jphRH2C54-oNTEU04IgoNWVV00myJuWom6c52dmwYOcYe8uMz2AqdzTNwquK4L4YIxsOQ5RRIZMNBXig46G6b2V0fFU1vTk6rtMgDEVcfe3TbSfKk9LSKpnKzIKMxsCHKYxb9AQ1xXdDiiWP7Ns1dYt9DrqqNddcSFmWyt2SsuySmmHK6Z6wUqe3wmS0qpWmCI7gM6pu4n4RN4ZwVK4Mw39kK4TS5V5Ehhns1HPaUuFwmYkCLmTYI_qSU"/>
+</div>
+<div class="flex-1 min-w-0 border-b border-outline-variant/10 pb-1">
+<div class="flex justify-between items-baseline">
+<h3 class="text-[15px] font-bold text-on-surface truncate">Julian Reed</h3>
+<span class="text-[11px] text-on-surface-variant">Monday</span>
+</div>
+<p class="text-[13px] text-on-surface-variant/70 truncate mt-0.5">Sent an attachment</p>
+</div>
+</div>
+<!-- Chat Card 5 -->
+<div class="group flex items-center gap-4 p-4 rounded-xl hover:bg-surface-container transition-colors cursor-pointer">
+<div class="flex-shrink-0">
+<img alt="" class="w-12 h-12 rounded-full object-cover" data-alt="profile of a woman with warm tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ2u5lIM0YXSydS192rzumVg3poRz-Bg4R7xdiFAna5mwke5yHt4vUvxxienKK3iAsIdzkEAgPW-c__3doKxoqGl-_xV6HNWqE8RfGPkPkdtcYu4scaI848mfoXzc8k6d_skV1PyvZc8jbEHB3rjoyMF3mGlGs3raaNasqR-3QmKD5PeGQ79q5_dG1YhwgiEl-_Y2datP11mEYNb764C5AA-FsYpWHOineABdUk5muixU0LNrkdxDI5E4eT9TArPgxe7re5dQh3SI"/>
+</div>
+<div class="flex-1 min-w-0 border-b border-outline-variant/10 pb-1">
+<div class="flex justify-between items-baseline">
+<h3 class="text-[15px] font-bold text-on-surface truncate">Sarah Miller</h3>
+<span class="text-[11px] text-on-surface-variant">Oct 24</span>
+</div>
+<p class="text-[13px] text-on-surface-variant/70 truncate mt-0.5">The cinnamon rolls are ready!</p>
+</div>
+</div>
+</section>
+<!-- Promotional Card (Editorial Bento element) -->
+<div class="mt-8 relative overflow-hidden rounded-xl bg-primary text-on-primary p-6 shadow-xl">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary opacity-20 -mr-10 -mt-10 rounded-full blur-2xl"></div>
+<div class="relative z-10">
+<span class="text-[10px] font-bold uppercase tracking-widest text-primary-fixed mb-2 block">New Feature</span>
+<h4 class="text-xl font-bold leading-tight mb-2">Autumn Gatherings</h4>
+<p class="text-sm text-primary-fixed/80 leading-relaxed mb-4">Coordinate your harvest meetups with the new shared itinerary tool.</p>
+<button class="bg-surface-container-lowest text-primary text-xs font-bold py-2 px-4 rounded-full hover:bg-primary-fixed transition-colors">Explore</button>
+</div>
+<div class="absolute bottom-0 right-0 p-4 opacity-30 transform rotate-12">
+<span class="material-symbols-outlined text-6xl" data-icon="forest">forest</span>
+</div>
+</div>
+</main>
+<!-- FAB for New Chat -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-full shadow-lg flex items-center justify-center transition-transform active:scale-90 z-40">
+<span class="material-symbols-outlined" data-icon="edit_square">edit_square</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 pb-safe bg-stone-50/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-[0_-4px_20px_rgba(44,22,14,0.04)] rounded-t-xl z-50">
+<a class="flex flex-col items-center justify-center bg-red-100/50 dark:bg-red-900/30 text-red-900 dark:text-red-300 rounded-xl px-3 py-1 transition-all duration-300 ease-in-out transform active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="chat" style="font-variation-settings: 'FILL' 1;">chat</span>
+<span class="text-[11px] font-medium uppercase tracking-widest mt-1">Chats</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-500 hover:text-orange-700 dark:hover:text-orange-400 transition-all duration-300 ease-in-out transform active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+<span class="text-[11px] font-medium uppercase tracking-widest mt-1">Calls</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-500 hover:text-orange-700 dark:hover:text-orange-400 transition-all duration-300 ease-in-out transform active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-[11px] font-medium uppercase tracking-widest mt-1">People</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-500 hover:text-orange-700 dark:hover:text-orange-400 transition-all duration-300 ease-in-out transform active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-[11px] font-medium uppercase tracking-widest mt-1">Settings</span>
+</a>
+</nav>
+</body></html>

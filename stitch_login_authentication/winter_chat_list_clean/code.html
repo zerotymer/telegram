@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Telegram - Winter Edition</title>
+<script type="text/javascript" nonce="5e6c1902a64248c29ba77d87da3" src="//injections.adguard.org?ts=1775003536405&amp;type=content-script&amp;dmn=contribution.usercontent.google.com&amp;url=https%3A%2F%2Fcontribution.usercontent.google.com%2Fdownload%3Fc%3DCgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2JjNzRkYTllNzU2OTQ1MjA4NjMxNmQwYjllZDQ2YzJjEgsSBxCb2MnlmRMYAZIBIwoKcHJvamVjdF9pZBIVQhM3ODg1NDg0MjgyOTYwMjk3MDE4%26filename%3D%26opi%3D89354086&amp;app=chrome.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=0&amp;stealth=1&amp;st-flash&amp;st-java&amp;st-dnt"></script><script type="text/javascript" nonce="5e6c1902a64248c29ba77d87da3" src="//injections.adguard.org?ts=1775003536405&amp;name=AdGuard%20Assistant&amp;type=user-script"></script><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed": "#ffddb0",
+              "surface-tint": "#206393",
+              "inverse-primary": "#96ccff",
+              "on-tertiary-fixed": "#281800",
+              "on-surface": "#191c1e",
+              "on-primary-fixed-variant": "#004a75",
+              "on-primary": "#ffffff",
+              "on-tertiary-fixed-variant": "#614000",
+              "on-primary-container": "#fdfcff",
+              "surface-bright": "#f7f9fb",
+              "on-error": "#ffffff",
+              "error": "#ba1a1a",
+              "secondary-fixed": "#cae8e8",
+              "primary-container": "#3c79ab",
+              "on-primary-fixed": "#001d32",
+              "tertiary": "#7d5400",
+              "secondary-fixed-dim": "#aecccc",
+              "on-surface-variant": "#41474f",
+              "primary": "#1c6090",
+              "on-tertiary-container": "#fffbff",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-container": "#9a6c17",
+              "outline-variant": "#c1c7d0",
+              "on-secondary-fixed": "#022020",
+              "surface-container": "#eceef0",
+              "secondary": "#476364",
+              "surface-container-highest": "#e0e3e5",
+              "surface-container-high": "#e6e8ea",
+              "inverse-surface": "#2d3133",
+              "on-background": "#191c1e",
+              "surface-container-low": "#f2f4f6",
+              "primary-fixed": "#cee5ff",
+              "tertiary-fixed-dim": "#f6bc62",
+              "surface-dim": "#d8dadc",
+              "on-tertiary": "#ffffff",
+              "on-error-container": "#93000a",
+              "on-secondary": "#ffffff",
+              "inverse-on-surface": "#eff1f3",
+              "outline": "#717880",
+              "primary-fixed-dim": "#96ccff",
+              "on-secondary-fixed-variant": "#304b4c",
+              "background": "#f7f9fb",
+              "surface-variant": "#e0e3e5",
+              "error-container": "#ffdad6",
+              "on-secondary-container": "#4b6868",
+              "surface": "#f7f9fb",
+              "secondary-container": "#c7e6e6"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .frost-overlay {
+            background: rgba(224, 227, 229, 0.4);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-24">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 w-full z-50 bg-slate-50/60 backdrop-blur-xl shadow-[0_20px_40px_rgba(28,96,144,0.06)]">
+<div class="flex items-center justify-between px-4 h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="text-sky-700 hover:bg-sky-100/50 transition-colors active:scale-95 duration-200 p-2 rounded-full">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="text-xl font-bold text-sky-800 tracking-tight">Telegram</h1>
+</div>
+<button class="text-sky-700 hover:bg-sky-100/50 transition-colors active:scale-95 duration-200 p-2 rounded-full">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</header>
+<main class="pt-20 px-4 space-y-6">
+<!-- Stories/Status Section (Asymmetric Editorial Layout) -->
+<section class="flex gap-4 overflow-x-auto pb-4 no-scrollbar">
+<div class="flex-shrink-0 flex flex-col items-center gap-2">
+<div class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center border-2 border-primary border-dashed">
+<span class="material-symbols-outlined text-on-primary">add</span>
+</div>
+<span class="text-[11px] font-medium text-on-surface-variant">Your Story</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center gap-2">
+<div class="w-16 h-16 rounded-full p-0.5 border-2 border-primary">
+<img class="w-full h-full object-cover rounded-full" data-alt="portrait of a young woman in a winter knit sweater with soft cinematic lighting and snowy background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ_1GnTy0LEASdfaofX60ozro_NEY3vkhXlFImv_6UXA5Ue21uYK5f8OWgSlNXAYUcARSNr9PyHFQNxIAsiEd27TIuNwxHw2GDGkwDRdM5t5BcgerxnqZ-RG6hrV0DnbfW1sPCj04sFhnjhqTsOAdzTUMqsGIlrgt80RDoaq3wa_lRWOl54SFA5F1Hwy3teuCTFUubJJrhG0e19uD64PpSNo0-A9pT0OG2p6vE4-KxOuiGCyvGMtGcw3SasKNVmAc666LzVW3yKo4"/>
+</div>
+<span class="text-[11px] font-medium text-on-surface-variant">Elena</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center gap-2">
+<div class="w-16 h-16 rounded-full p-0.5 border-2 border-primary">
+<img class="w-full h-full object-cover rounded-full" data-alt="portrait of a man with a beard wearing a heavy wool coat against a blurred icy landscape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBs4Crgb9WxFF5vAMvyv6mgQXitRwYLoJGQDc0c4jls6mZKYwM0bnlZK6WFyzWh80pIOlcNLR7fyVKyQ_jkh3_bgjHWyJpkxxvEJlE31RDCPGqhW9f2gZQtUt98NE77ZKZqqVpJiGgrmAVdimalKbDIatbJKpQJe5OYNyTV_K4IJm3SHH41Q2tOMpFbLUnCW5GD7nEfVuy-s6ADIXc5DMQPy3mnFvIo3L0_eefqOqMR1nRzt5YHddU8djWPfGMRMECpX4jckX0bPxI"/>
+</div>
+<span class="text-[11px] font-medium text-on-surface-variant">Marcus</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center gap-2">
+<div class="w-16 h-16 rounded-full p-0.5 border-2 border-outline-variant">
+<img class="w-full h-full object-cover rounded-full" data-alt="side profile of a woman with frosted hair looking out a window at a snowy forest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPmeL2b1LrSp2QKFI4ytehPda6dXof-npnw7Lg7F4K3EzUVH8l43y3pZTvgnTpNXGVY9pzoIAh19MYmujn3JUQoPg_RT3-W5xZxlpLto3r5QMnCexscP9XI9Nc9cGHLUTsncRJZDA_Xn_7RRoD6uoW3VpKojSV3Afs1JXA_K8Rf3y6B4rBZw7MPfST9GL04A1w4fajCbXtw2-kF53jwBzA4iWuwNM44haBoRx2JOzm8r-jh-Ek8Tgx2-vwo4wtgw7OV0b4IlvtlJY"/>
+</div>
+<span class="text-[11px] font-medium text-on-surface-variant">Sasha</span>
+</div>
+</section>
+<!-- Chat List -->
+<div class="space-y-1">
+<!-- Active/Selected Chat Example -->
+<div class="bg-surface-container-low rounded-xl p-4 flex items-center gap-4 hover:bg-sky-100/50 transition-colors duration-200">
+<div class="relative">
+<img class="w-14 h-14 rounded-full object-cover" data-alt="close-up portrait of a cheerful man in a blue winter beanie with bright soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoX5iuQf5MWmwCESWruU5O_wfgzp_6wv-RQuCWvqz8DRCs-WL5B-fh6ZQzfIADO-saN71jxbhGclIrR4DovMdvG7ET8rVlkdpkxjFETxB_bpyK6_Cg9V6nxiJUtWrPq99rQvwuqVb6YdiUixhRcShiJJ_uUtqEsQb4FXcn5pCaT7IykOCsUUM_KiZgwBSaVAyCdmg6Q5CVRauX0c-0HL3E3MNKBNcWK-xVW0MsrBZsE2AvhHtw9Iu7tBTFPSVWiUnHPBAYcgNPjL4"/>
+<div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-green-500 border-2 border-surface-container-low rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline">
+<h3 class="font-semibold text-on-surface truncate">Alex Rivers</h3>
+<span class="text-[11px] text-sky-700 font-medium">14:20</span>
+</div>
+<p class="text-sm text-primary font-medium truncate">Did you see the snowfall today? It's incredible...</p>
+</div>
+<div class="flex flex-col items-end gap-1">
+<div class="bg-primary text-on-primary text-[10px] font-bold px-2 py-0.5 rounded-full">2</div>
+</div>
+</div>
+<!-- Standard Chat Item -->
+<div class="p-4 flex items-center gap-4 hover:bg-surface-container-high transition-colors duration-200 rounded-xl">
+<div class="w-14 h-14 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-bold text-xl">
+                    DG
+                </div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline">
+<h3 class="font-semibold text-on-surface truncate">Design Group</h3>
+<span class="text-[11px] text-on-surface-variant">12:05</span>
+</div>
+<p class="text-sm text-on-surface-variant truncate">Sarah: Updated the winter assets for the hero section.</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="material-symbols-outlined text-outline-variant text-lg">done_all</span>
+</div>
+</div>
+<!-- Chat Item -->
+<div class="p-4 flex items-center gap-4 hover:bg-surface-container-high transition-colors duration-200 rounded-xl">
+<img class="w-14 h-14 rounded-full object-cover" data-alt="portrait of a professional woman in a grey wool scarf in a minimalist modern office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSxI9d0t6kM5IJusHhzN_Z0MMHknDl18HVstN9zAwHl0_sBtzXtMYi4Jwt4zKRpUC7W3ZVTa_tMioN9dT-GyLF3dF6bDIN73-NFNNDPuo5YoBs2mHg9FQcPeTaHlMgP0EJj9fhDWS4MsQOqy4d21q0ZUWS41e4iBG8SR1_RQBiHglP___M_RCjGDBY4Je8FzNKDkyMo5zh66_G7ff5XbXPQZKQUJmBz5Jz43oFldm5J5y1cqo5Ha08DOVBxspIqKBYjs9mv2q1pwU"/>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline">
+<h3 class="font-semibold text-on-surface truncate">Claire Miller</h3>
+<span class="text-[11px] text-on-surface-variant">Yesterday</span>
+</div>
+<p class="text-sm text-on-surface-variant truncate">The meeting is scheduled for Monday at 10 AM.</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="material-symbols-outlined text-outline-variant text-lg">done</span>
+</div>
+</div>
+<!-- Chat Item (Pinned) -->
+<div class="p-4 flex items-center gap-4 hover:bg-surface-container-high transition-colors duration-200 rounded-xl">
+<div class="w-14 h-14 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary">campaign</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline">
+<div class="flex items-center gap-1">
+<h3 class="font-semibold text-on-surface truncate">Winter Announcements</h3>
+<span class="material-symbols-outlined text-xs text-sky-700">push_pin</span>
+</div>
+<span class="text-[11px] text-on-surface-variant">Feb 12</span>
+</div>
+<p class="text-sm text-on-surface-variant truncate">Welcome to the frosty season update!</p>
+</div>
+</div>
+<!-- More Chats -->
+<div class="p-4 flex items-center gap-4 hover:bg-surface-container-high transition-colors duration-200 rounded-xl">
+<img class="w-14 h-14 rounded-full object-cover" data-alt="portrait of a man with spectacles wearing a denim jacket against a soft light blue wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_8taP6bpq-O9kTnrea7eKUM24kQS2qGjtCIbsGBrJ3YsJdG_AfCuG03b8ss7r2JbSZa9tsRdnWgamK_x1KIaMkuHZNXSFz7JeVjBOadNT0t-nym8s-tMPUn66LCdkkvSOvP6CW9yOzVszcqdhU1RYr_u5vrB0u4ZaOnaZ8BmbdzPWs0UVC9HM-plBjUh-63Q-9GAPImzYw4FyKy-OLbGNgdWupfKeqOLhQhObMHTwGR2nwR8sXK-GhhlXslP0WnoOqK7mhB_ORpw"/>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline">
+<h3 class="font-semibold text-on-surface truncate">James Wilson</h3>
+<span class="text-[11px] text-on-surface-variant">Feb 11</span>
+</div>
+<p class="text-sm text-on-surface-variant truncate">Sent a photo</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="material-symbols-outlined text-outline-variant text-lg">image</span>
+</div>
+</div>
+</div>
+<!-- Bento Grid Highlight (Asymmetric Feature) -->
+<section class="grid grid-cols-2 gap-4 pb-8">
+<div class="bg-primary-container rounded-xl p-5 text-on-primary-container col-span-2 relative overflow-hidden shadow-lg">
+<div class="relative z-10">
+<h4 class="text-lg font-bold mb-1">Winter Collection</h4>
+<p class="text-sm opacity-90 max-w-[60%]">Explore the new arctic-inspired sticker packs for your chats.</p>
+<button class="mt-4 bg-surface-container-lowest text-primary px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider">Explore</button>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-20">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">ac_unit</span>
+</div>
+</div>
+<div class="bg-secondary-container rounded-xl p-4 flex flex-col justify-between aspect-square">
+<span class="material-symbols-outlined text-on-secondary-container text-3xl">cloudy_snowing</span>
+<div>
+<p class="text-[11px] font-bold text-on-secondary-container uppercase tracking-widest">Weather</p>
+<p class="text-xl font-bold text-on-secondary-container">-4°C</p>
+</div>
+</div>
+<div class="bg-surface-container-highest rounded-xl p-4 flex flex-col justify-between aspect-square relative overflow-hidden">
+<div class="frost-overlay absolute inset-0 z-0"></div>
+<div class="relative z-10 flex flex-col h-full justify-between">
+<span class="material-symbols-outlined text-primary text-3xl">timer</span>
+<div>
+<p class="text-[11px] font-bold text-on-surface uppercase tracking-widest">Focus Mode</p>
+<p class="text-xl font-bold text-on-surface">Silent</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- FAB -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-2xl shadow-xl flex items-center justify-center active:scale-90 transition-transform duration-300">
+<span class="material-symbols-outlined text-3xl">edit</span>
+</button>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 w-full z-50 bg-slate-50/80 backdrop-blur-md rounded-t-[1.5rem] shadow-[0_-10px_30px_rgba(28,96,144,0.04)]">
+<div class="flex justify-around items-center w-full h-20 px-2 pb-safe">
+<!-- Contacts -->
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-sky-600 active:scale-90 transition-all duration-300 ease-out px-5 py-1.5" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="text-[11px] font-medium tracking-wide">Contacts</span>
+</a>
+<!-- Calls -->
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-sky-600 active:scale-90 transition-all duration-300 ease-out px-5 py-1.5" href="#">
+<span class="material-symbols-outlined mb-1">call</span>
+<span class="text-[11px] font-medium tracking-wide">Calls</span>
+</a>
+<!-- Chats (Active) -->
+<a class="flex flex-col items-center justify-center bg-sky-100 text-sky-900 rounded-2xl px-5 py-1.5 active:scale-90 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">chat</span>
+<span class="text-[11px] font-medium tracking-wide">Chats</span>
+</a>
+<!-- Settings -->
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-sky-600 active:scale-90 transition-all duration-300 ease-out px-5 py-1.5" href="#">
+<span class="material-symbols-outlined mb-1">settings</span>
+<span class="text-[11px] font-medium tracking-wide">Settings</span>
+</a>
+</div>
+</nav>
+</body></html>

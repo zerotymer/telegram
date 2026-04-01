@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Maple Messaging - Autumn Dashboard</title>
+<script type="text/javascript" nonce="5e6c1902a64248c29ba77d87da3" src="//injections.adguard.org?ts=1775003536405&amp;type=content-script&amp;dmn=contribution.usercontent.google.com&amp;url=https%3A%2F%2Fcontribution.usercontent.google.com%2Fdownload%3Fc%3DCgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2EwMGM0MWJlNWIxMjQ0NGNhZTdmZjk5YzA4NTY1MmE2EgsSBxCb2MnlmRMYAZIBIwoKcHJvamVjdF9pZBIVQhM3ODg1NDg0MjgyOTYwMjk3MDE4%26filename%3D%26opi%3D89354086&amp;app=chrome.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=0&amp;stealth=1&amp;st-flash&amp;st-java&amp;st-dnt"></script><script type="text/javascript" nonce="5e6c1902a64248c29ba77d87da3" src="//injections.adguard.org?ts=1775003536405&amp;name=AdGuard%20Assistant&amp;type=user-script"></script><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline": "#8e706d",
+              "inverse-primary": "#ffb4ac",
+              "surface-tint": "#b52424",
+              "secondary-fixed": "#ffdbc9",
+              "on-error-container": "#93000a",
+              "error-container": "#ffdad6",
+              "surface": "#fff8f6",
+              "surface-variant": "#ffdbd0",
+              "secondary-fixed-dim": "#ffb68d",
+              "on-surface-variant": "#5a403e",
+              "on-primary-container": "#ffc8c2",
+              "tertiary-container": "#775700",
+              "on-secondary-fixed": "#321200",
+              "on-error": "#ffffff",
+              "background": "#fff8f6",
+              "inverse-on-surface": "#ffede8",
+              "inverse-surface": "#442a22",
+              "tertiary": "#594100",
+              "surface-container-high": "#ffe2da",
+              "secondary": "#9a4600",
+              "on-surface": "#2c160e",
+              "surface-container-low": "#fff1ed",
+              "surface-bright": "#fff8f6",
+              "primary": "#8f000d",
+              "on-primary-fixed-variant": "#92030f",
+              "error": "#ba1a1a",
+              "primary-fixed-dim": "#ffb4ac",
+              "on-tertiary-fixed-variant": "#5c4300",
+              "tertiary-fixed": "#ffdea0",
+              "surface-container": "#ffe9e3",
+              "on-secondary-fixed-variant": "#763400",
+              "outline-variant": "#e2beba",
+              "surface-container-highest": "#ffdbd0",
+              "secondary-container": "#fd8a3e",
+              "primary-fixed": "#ffdad6",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-container": "#ffce67",
+              "on-tertiary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "tertiary-fixed-dim": "#f6be3b",
+              "on-tertiary-fixed": "#261900",
+              "on-primary-fixed": "#410003",
+              "on-background": "#2c160e",
+              "surface-dim": "#fbd1c4",
+              "on-secondary-container": "#672c00",
+              "primary-container": "#b22222",
+              "on-primary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .lucide { width: 20px; height: 20px; vertical-align: middle; }
+</style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-white">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-stone-50/80 dark:bg-stone-950/80 backdrop-blur-md border-b border-stone-200/50">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black italic text-red-900 dark:text-red-600">Maple Messaging</div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="text-red-800 dark:text-red-500 border-b-2 border-red-800 dark:border-red-500 pb-1 font-sans tracking-tight" href="#">Inbox</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 dark:hover:text-orange-400 font-sans tracking-tight transition-colors duration-300" href="#">Groups</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 dark:hover:text-orange-400 font-sans tracking-tight transition-colors duration-300" href="#">Archived</a>
+</div>
+<div class="flex items-center space-x-6">
+<div class="relative hidden sm:block">
+<i class="absolute left-3 top-1/2 -translate-y-1/2 text-stone-400 w-4 h-4" data-lucide="search"></i>
+<input class="bg-surface-container-highest border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary/40 transition-all" placeholder="Search..." type="text"/>
+</div>
+<button class="hover:bg-orange-50 dark:hover:bg-orange-900/20 p-2 rounded-full transition-colors duration-300">
+<i class="text-stone-700 w-5 h-5" data-lucide="settings"></i>
+</button>
+<img alt="User profile" class="w-10 h-10 rounded-full object-cover border border-stone-200" data-alt="portrait of a creative professional man in a rustic flannel shirt with soft natural morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfdqCraYI2uit-m98XVqAaFRYF2xLuOz_xfpgxLsiCw45yJZffAg6A6RAEJ0f1WaqPwvdg2DoBNtjx1tUNQ7MFlBcUqMzHIHHtP1ef2NVMlZ0euqsrunHGkaTmojJZKq-z-ZZ3rI281mDBGFb5nFJahBO0YgkItc6AqsjMNsyf2_RQYxyO6ZiumDV0I8f9WS8wZXgUUjDvPDPPDoCIj7v3mLFyvadtj5ChrkW-uA5OChLz2fpgW7QeoPTII6qX9eWdc9s3ZJh9KbU"/>
+</div>
+</div>
+</nav>
+<div class="flex pt-20">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-[calc(100vh-80px)] w-64 bg-stone-100 dark:bg-stone-900 sticky top-20 py-6 px-4 space-y-2">
+<div class="mb-8 px-4">
+<h2 class="text-xl font-bold text-red-900 dark:text-red-600 leading-tight">The Seasonal Editor</h2>
+<p class="text-xs text-stone-500 italic">Rustic Elegance</p>
+</div>
+<nav class="flex-grow space-y-1">
+<a class="bg-orange-100 dark:bg-orange-900/30 text-orange-900 dark:text-orange-200 rounded-xl px-4 py-3 font-bold flex items-center space-x-3 transition-transform duration-200" href="#">
+<i class="w-5 h-5 fill-current" data-lucide="message-square"></i>
+<span>Messages</span>
+</a>
+<a class="text-stone-500 dark:text-stone-400 px-4 py-3 hover:text-stone-900 dark:hover:text-stone-100 flex items-center space-x-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<i class="w-5 h-5" data-lucide="users"></i>
+<span>Contacts</span>
+</a>
+<a class="text-stone-500 dark:text-stone-400 px-4 py-3 hover:text-stone-900 dark:hover:text-stone-100 flex items-center space-x-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<i class="w-5 h-5" data-lucide="camera"></i>
+<span>Moments</span>
+</a>
+<a class="text-stone-500 dark:text-stone-400 px-4 py-3 hover:text-stone-900 dark:hover:text-stone-100 flex items-center space-x-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<i class="w-5 h-5" data-lucide="settings-2"></i>
+<span>Settings</span>
+</a>
+</nav>
+<button class="mt-auto bg-primary text-on-primary py-4 rounded-xl font-bold flex items-center justify-center space-x-2 shadow-lg shadow-primary/20 hover:bg-primary-container transition-all active:scale-95">
+<i class="w-5 h-5" data-lucide="pen-tool"></i>
+<span>Compose</span>
+</button>
+</aside>
+<!-- Main Content -->
+<main class="flex-grow p-8 max-w-7xl mx-auto">
+<header class="mb-12">
+<h1 class="text-5xl font-black tracking-tight text-on-background mb-2">Autumn Feed</h1>
+<p class="text-stone-500 max-w-lg">Your curated space for seasonal collaborations and rustic dialogue.</p>
+</header>
+<!-- Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Large Highlight Card -->
+<div class="md:col-span-2 bg-surface-container-low rounded-2xl overflow-hidden relative group shadow-sm border border-stone-200/30">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent z-10"></div>
+<img class="w-full h-[450px] object-cover group-hover:scale-105 transition-transform duration-700" data-alt="misty forest at sunrise with golden sunlight filtering through orange maple leaves and thick fog" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtPrj_dUKAuLm2s5jF3IQtK1f4qHDv8AS6fru-aO_iSfKtLcA1Ku054YsIL2jY-OLOmZG69gj-0Pf2SVfiQmouP1s-YpXmUl5emZ6Ks-1VDvhHLnt5MAoDYqdcIhjX9dQs9oKB-QnK0f-pSiTCKIcMIKvjH9t1s_mjB3mZU3ZhC31htV6DxFtnIwXlUpG-YI88DijALUKjSDG2wRsv1aJls2krYzhKsgzdClvduuPbUXTuPVOaM6lu2lNyqM51MtOvi5VA3x0B0d0"/>
+<div class="absolute bottom-0 left-0 p-10 z-20">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-4 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase mb-4 inline-block border border-on-tertiary-fixed/20">Featured Moment</span>
+<h2 class="text-4xl font-bold text-white mb-6 leading-tight">The Art of Slow Living in the North Woods</h2>
+<div class="flex items-center space-x-4">
+<img class="w-10 h-10 rounded-full border-2 border-white/30" data-alt="portrait of a woman in a knit sweater with soft lighting and natural background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx19Om7vgFM3MIG8ovOm9HRsbejDGoYwmwHbI9DWj31_kliBUsOELAaA-_w1aEqj4tB2qpUMUPkMHTb9D72wqAm6z8YZ1nXDHkYMOqnWY-r1hrPVTpBPEBBrt7xnH8IduNgnhf7suIMHGt1VZ45Oif_1Gb9Lq8vHEV-mUGXT7C8Efw7F3GZoGmsap_H_y9GXXq2su-ZzOi7-cLHBrkI-3OmuU9pQAYGT3cQC9CA_FGcgU4cmSFOo_qmtekXSAVZdkVwCajTN9NrrQ"/>
+<div class="flex flex-col">
+<span class="text-white font-bold text-sm">Clara Thorne</span>
+<span class="text-white/70 text-xs">2h ago</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Messaging Quick View -->
+<div class="bg-surface-container-highest rounded-2xl p-8 flex flex-col shadow-sm border border-stone-200/50">
+<div class="flex justify-between items-center mb-8">
+<h3 class="text-xl font-bold text-red-900">Recent Threads</h3>
+<span class="bg-primary text-white text-[10px] font-black px-2 py-1 rounded-md">4 NEW</span>
+</div>
+<div class="space-y-6 flex-grow">
+<div class="flex items-center space-x-4 group cursor-pointer">
+<div class="w-12 h-12 rounded-xl bg-orange-200 flex items-center justify-center text-orange-900 font-bold shadow-sm">JD</div>
+<div class="flex-grow">
+<h4 class="font-bold text-sm group-hover:text-primary transition-colors">Julian Delevan</h4>
+<p class="text-xs text-stone-500 truncate w-32">The proofs for the leather...</p>
+</div>
+<span class="text-[10px] text-stone-400">14:02</span>
+</div>
+<div class="flex items-center space-x-4 opacity-70 group cursor-pointer">
+<div class="w-12 h-12 rounded-xl bg-stone-200 flex items-center justify-center text-stone-600 font-bold">MK</div>
+<div class="flex-grow">
+<h4 class="font-bold text-sm">Maya Koji</h4>
+<p class="text-xs text-stone-500 truncate w-32">I've attached the palette...</p>
+</div>
+<span class="text-[10px] text-stone-400">Yest</span>
+</div>
+<div class="flex items-center space-x-4 group cursor-pointer">
+<div class="w-12 h-12 rounded-xl bg-red-100 flex items-center justify-center text-red-900 font-bold shadow-sm">SR</div>
+<div class="flex-grow">
+<h4 class="font-bold text-sm group-hover:text-primary transition-colors">Samuel Reed</h4>
+<p class="text-xs text-stone-500 truncate w-32">Ready for the shoot?</p>
+</div>
+<span class="text-[10px] text-stone-400">09:15</span>
+</div>
+</div>
+<button class="mt-10 text-primary font-bold text-xs uppercase tracking-widest flex items-center justify-center py-4 border-t border-outline-variant/30 hover:text-primary-container transition-colors">
+                        View All Messages
+                    </button>
+</div>
+<!-- Secondary Bento Rows -->
+<div class="bg-white rounded-2xl p-8 shadow-sm border border-stone-200/50">
+<div class="flex items-center space-x-3 mb-6">
+<i class="text-secondary w-5 h-5" data-lucide="palette"></i>
+<h3 class="font-bold text-lg">Autumn Palette</h3>
+</div>
+<div class="grid grid-cols-4 gap-3 mb-6">
+<div class="h-14 bg-primary rounded-lg shadow-inner"></div>
+<div class="h-14 bg-secondary rounded-lg shadow-inner"></div>
+<div class="h-14 bg-tertiary-fixed rounded-lg shadow-inner"></div>
+<div class="h-14 bg-on-surface-variant rounded-lg shadow-inner"></div>
+</div>
+<p class="text-xs text-stone-500 leading-relaxed">System-wide tones derived from the current foliage density in the Vermont region.</p>
+</div>
+<div class="bg-surface-container rounded-2xl overflow-hidden group shadow-sm border border-stone-200/50">
+<div class="p-6">
+<h3 class="font-bold text-lg mb-2">Editor's Drafts</h3>
+<p class="text-xs text-stone-600">3 stories currently being curated for the November issue.</p>
+</div>
+<div class="relative overflow-hidden h-40">
+<img class="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500" data-alt="close up of a vintage typewriter on a wooden desk surrounded by scattered autumn leaves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUVk0gkczoxajZkM3htqIU7_Uz4v9L0FiMRawBo-5-X3Xmiq_lGQMMNgpqiM0OrvoWHVOC3NPXCq04OjkU7hHgmB5oDwcKEuAeF62kCNY89YtIouKuMzs0JIr6hXmFWwsemmfoDmK7CTNvb61VzsXkgYxB9d-7umhbeLGJq97ek_tBnh_uiRAwArPJq0KLTOeaPfQr1mJIRYKZCY0O4wPrkn6l3Viu4AuVsobdhYAmCsjb5908lc2Tmj2e4j7g7UyIg8KUDXImV_Y"/>
+</div>
+</div>
+<div class="bg-primary-container text-white rounded-2xl p-8 flex flex-col justify-between shadow-xl shadow-primary-container/20">
+<div>
+<i class="w-8 h-8 mb-4 text-white/90" data-lucide="sparkles"></i>
+<h3 class="text-2xl font-bold mb-2">Maple Insights</h3>
+<p class="text-sm text-white/80 leading-relaxed">Your engagement has increased by 14% since the harvest season began.</p>
+</div>
+<div class="mt-8 flex items-center justify-between">
+<a class="bg-white text-primary px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-widest inline-block text-center hover:bg-stone-50 transition-colors shadow-sm" href="#">
+    Full Report
+</a>
+<button class="bg-primary hover:bg-red-800 text-white p-2.5 rounded-full shadow-lg transition-all active:scale-90">
+<i class="w-5 h-5" data-lucide="plus"></i>
+</button>
+</div>
+</div>
+</div>
+<!-- Contextual Section -->
+<section class="mt-16 mb-24">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="text-3xl font-black tracking-tight">Latest Moments</h2>
+<p class="text-stone-500 font-medium">Visual snippets from the community</p>
+</div>
+<button class="text-primary font-bold text-sm hover:underline flex items-center space-x-1">
+<span>See the collection</span>
+<i class="w-4 h-4" data-lucide="chevron-right"></i>
+</button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<div class="relative group cursor-pointer overflow-hidden rounded-2xl">
+<img class="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-500" data-alt="vibrant red maple leaves backlit by afternoon sun" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwAs-UV1aSKu0whQ7QbOR7w0JvD_CwiN8fXr55xT6YXA5yyoT5-JH7OF5rnbAEH27_nUc7mBpr6DiEtsIIluE9weYdshSF0ifKEo-eM7qW7IjR4kmF8U84Fb9Tcj934zP4ChhdFnkAsIZrLjL9udUpdnsM9IJtMapiw5DEetmH0s47uHtJ-JdiGwHek_ctjRJfC9E3kJC2XpqZ0DpVMvlsM6chcyMXX5q_6VMGsb0ghERdCD1iWkXiBBGpsoLdH-WdoPouE7lpRkQ"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<i class="text-white w-6 h-6" data-lucide="heart"></i>
+</div>
+</div>
+<div class="relative group cursor-pointer overflow-hidden rounded-2xl">
+<img class="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-500" data-alt="paved path winding through a golden forest in the peak of autumn" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrvKwPcAVcKHHSEvOT2sS57zBDHKBXrAr1V8NTagA4NZS_hshmNPZboGbjChheuqH-Jh_2UBY_kBwwkPUcIYu80eQB2yue2no7Sa_Vg0ydA_IifeW2LMQWQrikrkyGz45sEjoXBdUi_VshsREdfoeKuWFBmUQNC8VzeS7sOLNiqRgWtMqw-htGQDVAYBqOI3DdQRqJbuMRTRO1dLHpgwKo86qRDNGnUAVvuQJW32pnG8AvQVH6ykjUq03kzI90n0b7KWLB9XPcH_w"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<i class="text-white w-6 h-6" data-lucide="heart"></i>
+</div>
+</div>
+<div class="relative group cursor-pointer overflow-hidden rounded-2xl">
+<img class="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-500" data-alt="misty mountain range with layers of autumn colors in the valley" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuuZHaYl8SC_btDKl11f9v7ys9w4dx_5xu0GO9HoWrkabzZWigkdSECr0ADlT0T0jaaboI4XjlCdne1mD_0qtDjrQsqmB5HV51ghTouMK51un9HG2ZOW1pnlp1DjB2g-znzKTpxg8F2Pc3y4nYPKYVXB_7ZAkPbjEIylTvgVe8kAr9vSq0ifw8ngvzJR7NUaKk-AeOghvU_Lhak7iM2wpYYahPTPSm1s6lHYNtm8j1_kv2-XR9H6b1GibIc7OVvG7L_XbeS5pGwu4"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<i class="text-white w-6 h-6" data-lucide="heart"></i>
+</div>
+</div>
+<div class="relative group cursor-pointer overflow-hidden rounded-2xl">
+<img class="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-500" data-alt="tall green and gold trees seen from directly below looking up at the sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZNIu-cwWDl-RXAiHT8EPB0Bfz01R3hce2rGw8jhxRTGRhFwD8I6waKQ2tGjvb4BjneuWCJp-JMQkKB6d6vA1X5gCvNHLfFlTVTY8o7jsaGzBLTO4I_WTlWPubYwEefGRqE6woii0sZDX8I70RxsPb4CETTdYFbVUE3l80oGynxcgy3EYFqEbWHpp6IQaDdGR7U8NSKux-W5zwoBoE2jWY60nSAUL0dMLV4_iVC8qcoSHNP4QXBeckZ3kL4LGEpBQINZbJFndqyU0"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<i class="text-white w-6 h-6" data-lucide="heart"></i>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-stone-50/90 dark:bg-stone-950/90 backdrop-blur-xl flex justify-around items-center px-4 pb-6 pt-3 border-t border-stone-200/50">
+<a class="flex flex-col items-center justify-center bg-red-800 dark:bg-red-900 text-white rounded-2xl px-6 py-2 transition-transform duration-300 scale-105" href="#">
+<i class="w-5 h-5 mb-1" data-lucide="home"></i>
+<span class="text-[9px] uppercase tracking-widest font-black">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 px-6 py-2 hover:text-orange-700 transition-colors" href="#">
+<i class="w-5 h-5 mb-1" data-lucide="search"></i>
+<span class="text-[9px] uppercase tracking-widest font-black">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 px-6 py-2 hover:text-orange-700 transition-colors" href="#">
+<i class="w-5 h-5 mb-1" data-lucide="bell"></i>
+<span class="text-[9px] uppercase tracking-widest font-black">Alerts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 px-6 py-2 hover:text-orange-700 transition-colors" href="#">
+<i class="w-5 h-5 mb-1" data-lucide="user"></i>
+<span class="text-[9px] uppercase tracking-widest font-black">Profile</span>
+</a>
+</nav>
+<!-- Desktop FAB -->
+<div class="fixed bottom-8 right-8 z-40 hidden md:block">
+<button class="w-16 h-16 bg-secondary text-white rounded-full flex items-center justify-center shadow-2xl shadow-secondary/40 hover:scale-110 active:scale-95 transition-all">
+<i class="w-8 h-8" data-lucide="plus"></i>
+</button>
+</div>
+<script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+</script>
+</body></html>

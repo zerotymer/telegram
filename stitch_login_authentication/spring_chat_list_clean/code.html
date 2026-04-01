@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script type="text/javascript" nonce="5e6c1902a64248c29ba77d87da3" src="//injections.adguard.org?ts=1775003536405&amp;type=content-script&amp;dmn=contribution.usercontent.google.com&amp;url=https%3A%2F%2Fcontribution.usercontent.google.com%2Fdownload%3Fc%3DCgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzNjMDU1MzRjZGFiZjRhMWE4ODhhODAyMTExZTMzNWQ2EgsSBxCb2MnlmRMYAZIBIwoKcHJvamVjdF9pZBIVQhM3ODg1NDg0MjgyOTYwMjk3MDE4%26filename%3D%26opi%3D89354086&amp;app=chrome.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=0&amp;stealth=1&amp;st-flash&amp;st-java&amp;st-dnt"></script><script type="text/javascript" nonce="5e6c1902a64248c29ba77d87da3" src="//injections.adguard.org?ts=1775003536405&amp;name=AdGuard%20Assistant&amp;type=user-script"></script><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-container": "#d18812",
+                        "outline-variant": "#bec8d1",
+                        "on-secondary-fixed": "#171c20",
+                        "surface-container": "#eeeeee",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#5a5f63",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-container-high": "#e8e8e8",
+                        "inverse-surface": "#2f3131",
+                        "primary-fixed": "#c8e6ff",
+                        "tertiary-fixed-dim": "#ffb95d",
+                        "on-background": "#1a1c1c",
+                        "surface-container-low": "#f3f3f3",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface-dim": "#dadada",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#86cfff",
+                        "on-secondary-fixed-variant": "#42474b",
+                        "outline": "#6f7881",
+                        "surface-variant": "#e2e2e2",
+                        "error-container": "#ffdad6",
+                        "background": "#f9f9f9",
+                        "surface": "#f9f9f9",
+                        "on-secondary-container": "#5e6367",
+                        "secondary-container": "#dce0e5",
+                        "on-tertiary-fixed": "#2a1700",
+                        "tertiary-fixed": "#ffddb7",
+                        "surface-tint": "#00658f",
+                        "inverse-primary": "#86cfff",
+                        "on-surface": "#1a1c1c",
+                        "on-primary-fixed-variant": "#004c6d",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "on-primary-container": "#00344c",
+                        "surface-bright": "#f9f9f9",
+                        "on-error": "#ffffff",
+                        "primary-container": "#24a1de",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#dfe3e7",
+                        "tertiary": "#855400",
+                        "on-primary-fixed": "#001e2e",
+                        "secondary-fixed-dim": "#c2c7cb",
+                        "on-surface-variant": "#3e4850",
+                        "primary": "#00658f",
+                        "on-tertiary-container": "#462a00"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-xl flex justify-between items-center px-4 h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="p-2 text-sky-600 dark:text-sky-400 hover:bg-slate-200/50 dark:hover:bg-slate-700/50 transition-colors active:scale-95 duration-150 rounded-full">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-sans tracking-tight font-semibold text-lg text-xl font-bold text-sky-600 dark:text-sky-400">Telegram</h1>
+</div>
+<button class="p-2 text-sky-600 dark:text-sky-400 hover:bg-slate-200/50 dark:hover:bg-slate-700/50 transition-colors active:scale-95 duration-150 rounded-full">
+<span class="material-symbols-outlined">search</span>
+</button>
+</header>
+<!-- Main Content: Chat List -->
+<main class="pt-20 px-4 space-y-6">
+<!-- Story/Spring Highlights (Bento-like top row) -->
+<section class="flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
+<div class="flex-shrink-0 flex flex-col items-center gap-1">
+<div class="w-16 h-16 rounded-full p-0.5 border-2 border-primary-container bg-surface-container-lowest shadow-sm">
+<img class="w-full h-full rounded-full object-cover" data-alt="portrait of a smiling young person with cherry blossoms in the background, soft spring sunlight, pastel tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY7d_BfzSgipKTmsq_TMQUToULRMip2hoTniQAeSWVcNjPfYQnU31SEpK6lMx04_eIA-FqVs1xRucc2F1OHsdnhNTrDGj4twMwX-geJhruL3dOL5pdz2h2rIzyB-IZP1Pgcemn7aIDbIO6ENUNLJyXOZZJuTxcV9YxbIvRgQATGLM-QnUDi9Dp2VsZfahcS9V4Ao1YzAEu-QMOPyVWZkzqeWcN4fboeemCl-j3hAtmRBJDTTPrG2F3j15k1-hJycVc0y7gfAQL13I"/>
+</div>
+<span class="text-[10px] font-medium text-on-surface-variant">Your Story</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center gap-1">
+<div class="w-16 h-16 rounded-full p-0.5 border-2 border-pink-400 bg-surface-container-lowest shadow-sm">
+<img class="w-full h-full rounded-full object-cover" data-alt="close up of pink cherry blossoms against a clear sky blue background, bright spring aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKKNxaouubn-kfCQf7TPGlh7JMDRKIXm70PixgWsMKZB864PH35z1Q_0tBSMuorB1s1lDhttbKs04xSgA_hX7MkmhZe2yxDh4BAJ5G98Ps7wJOYJHU_8wwOOTmQ3aexiiHGNQ4C03s-wAQ6VAb015givBBEPksh7dikVXp1NLcXOWpX0HH2WPGFr140xWDj_kP5hI3VpN_Tt50JpSdnoXMvII7w-p-QU4vnoNpRN9F6fY38KAm7VPGfw7tSeLl98CgTgQgQVxy4uc"/>
+</div>
+<span class="text-[10px] font-medium text-on-surface-variant">Lily</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center gap-1">
+<div class="w-16 h-16 rounded-full p-0.5 border-2 border-pink-400 bg-surface-container-lowest shadow-sm">
+<img class="w-full h-full rounded-full object-cover" data-alt="person wearing a sky blue linen shirt standing in a field of daisies, soft morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWVMxyQKD87ZIdx0USWDQNq4QzBZsXytqPbqkQG1x6kDw4ZVgtG2v-WGyK-YteVvOKfMyakKT9a_ainZ00yca3KAAW2WE0L6C7fdNH0N2sc61CsfqN_pnqN4gtgcll-huxrZ2q5Fv6SddaEvrRYaa4d3zFId7doH0k7zabzoZfP2J9VT0jNX0d2NgX0oKxQL33RlVJL2t64056cMK0eTLoTQVhqJb8w857PiN9zn259_IfITFvqhP_ZdYgXsPZHPltM0EBA2V0U04"/>
+</div>
+<span class="text-[10px] font-medium text-on-surface-variant">Marcus</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center gap-1">
+<div class="w-16 h-16 rounded-full p-0.5 border-2 border-pink-400 bg-surface-container-lowest shadow-sm">
+<img class="w-full h-full rounded-full object-cover" data-alt="aesthetic overhead shot of a light blue bicycle with a basket full of spring flowers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQN7d9bVLP8yZmqG8o5hRTs3_DJlHiW8PuTwsDEDlU8c47m0d2EbM2Iya52ZeTZW46kDMWyhAmQO24p_bhyG4MaxrLlEgO_dnhSvXfsHM4A6YFGW-tym3wm7K_ghTkDkmrsAo_uxqMZgV7rY8Cs9YUKlKFm0r_sTNK7V7ZnNOzO9uVSzrWifkDeUdrthiGrIVnPLYERUSYvgiLewPmVUzQRWvVMPuGIlqr2RUu_J-88oBmxWxARWbEsGHdRiJxxu10IJiDxNJPysM"/>
+</div>
+<span class="text-[10px] font-medium text-on-surface-variant">Chloe</span>
+</div>
+</section>
+<!-- Pinned / Active Conversations -->
+<section class="space-y-4">
+<!-- Chat Item 1 -->
+<div class="relative group p-4 bg-surface-container-low rounded-xl transition-all hover:bg-surface-container-high active:scale-[0.98]">
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-primary rounded-r-full"></div>
+<div class="flex items-center gap-4">
+<div class="relative w-14 h-14">
+<img class="w-full h-full rounded-full object-cover" data-alt="vibrant pink tulips in a glass vase with soft bokeh background, spring interior design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcWwjPSZMGr6c70J5rcaziIwqppfmfFdUX3o1g6w4V9mK2HkhON9cln_-xiN1MCzZUjHdqX3rrEydqA94WsiO6gnxa5keXqI9hQteClWrHZ_rP2i0L694_Dv8ZopF3bDBMQcpm_y8hetdTn9wn76Z04TMAyEdx36xaN8vM48krsEGW0Wpl9wUyLnwkGyqz8nCw8UnaHTw1VNH1zz07oP0-9msQ27fAF7-wTTlaJg3NXdK54-7i0bfULZDGYIJcA8PqCkY31LeJlI0"/>
+<div class="absolute bottom-0 right-0 w-4 h-4 bg-green-500 border-2 border-surface-container-low rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline">
+<h3 class="font-semibold text-on-surface truncate">Spring Design Group</h3>
+<span class="text-[10px] text-outline font-medium">10:42 AM</span>
+</div>
+<p class="text-sm text-on-surface-variant truncate font-medium mt-0.5">
+<span class="text-primary">Alice:</span> The new sky blue theme looks amazing!
+                        </p>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="bg-primary-container text-on-primary text-[10px] font-bold px-2 py-0.5 rounded-full">3</span>
+</div>
+</div>
+</div>
+<!-- Chat Item 2 -->
+<div class="p-4 bg-surface-container-lowest rounded-xl transition-all hover:bg-surface-container-low active:scale-[0.98]">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14">
+<img class="w-full h-full rounded-full object-cover" data-alt="minimalist photo of a person's hand holding a single pink flower against a bright blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyr2q8OiQlIMLShXPAO5HYbcfLHH2CSE5sNwwDliQsLmBPSV2FzVra-5hYHKUXvAuhKKd3aq90U33oWU0QxAy4JR7JerFjaICU-CpNHLubZfNoH4qnuMuH3pPjSSV4VhY9vdtNoN6g6KD_khR5G8V9EveuCrdU35oyH1T_dXXwmMzng-9Es9tUQziX43ehfDVPHCBxuJz5wgtVQLV0yKgQQbv7EnNSFVs7I3KROxSwK6sgO9NEQiubO4RH1JFEGRfOpowhTmQr090"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline">
+<h3 class="font-semibold text-on-surface truncate">Sophie Martin</h3>
+<span class="text-[10px] text-outline font-medium">Yesterday</span>
+</div>
+<p class="text-sm text-outline truncate mt-0.5">Are we still meeting at the park for the picnic?</p>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="material-symbols-outlined text-sm text-primary">done_all</span>
+</div>
+</div>
+</div>
+<!-- Chat Item 3 (Asymmetric Glass Card) -->
+<div class="p-4 bg-white/40 backdrop-blur-md rounded-xl transition-all hover:bg-white/60 active:scale-[0.98] border border-white/20">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14">
+<img class="w-full h-full rounded-full object-cover" data-alt="a cute small dog running through a field of yellow spring flowers, joyful atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDS9fwepMeCDBGVz5yIooqOr0CjrDjpxXBsxFtsKYo9IsE1am4RUlFBVKvagDhq9XN80hmdKK48e1gMnprenxGFCe4UrFcot1V_gpNdGsd19SDmt33jJWjRnUYdYVjJZvD-6swkk5bW9-tIzVgzPwkVbTt9046B_f9LfBiavulg5b6GZDWdMSG-LerediJJVT2yTYeoYSL1RoM0LXG3KroXWZt9gVUNvJHOQYK5trAHBXjFJ20VgCn2f_iNBmrZldaR-wqNqEhhfvE"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline">
+<h3 class="font-semibold text-on-surface truncate">Family Chat</h3>
+<span class="text-[10px] text-outline font-medium">Tuesday</span>
+</div>
+<p class="text-sm text-on-surface-variant truncate font-medium mt-0.5">
+<span class="text-pink-500">Mom:</span> Look at the puppy in the flowers! 🌸
+                        </p>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="material-symbols-outlined text-sm text-outline">push_pin</span>
+</div>
+</div>
+</div>
+<!-- Chat Item 4 -->
+<div class="p-4 bg-surface-container-lowest rounded-xl transition-all hover:bg-surface-container-low active:scale-[0.98]">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14">
+<div class="w-full h-full rounded-full bg-gradient-to-br from-sky-300 to-pink-300 flex items-center justify-center text-white font-bold text-lg">JS</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline">
+<h3 class="font-semibold text-on-surface truncate">James Smith</h3>
+<span class="text-[10px] text-outline font-medium">Monday</span>
+</div>
+<p class="text-sm text-outline truncate mt-0.5">Did you see the new update?</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Floating Action Button -->
+<button class="fixed right-6 bottom-24 w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-primary-container text-white shadow-lg shadow-primary/20 flex items-center justify-center transition-transform active:scale-90 z-40">
+<span class="material-symbols-outlined text-2xl">edit</span>
+</button>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-4 pt-2 bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-xl z-50 rounded-t-2xl shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+<a class="flex flex-col items-center justify-center text-sky-600 dark:text-sky-400 py-1 bg-sky-50 dark:bg-sky-900/30 rounded-xl px-4 transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-weight="fill">chat</span>
+<span class="text-[11px] font-medium font-sans uppercase tracking-wider mt-1">Chats</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 py-1 hover:text-pink-400 dark:hover:text-pink-300 transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[11px] font-medium font-sans uppercase tracking-wider mt-1">Contacts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 py-1 hover:text-pink-400 dark:hover:text-pink-300 transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[11px] font-medium font-sans uppercase tracking-wider mt-1">Settings</span>
+</a>
+</nav>
+</body></html>

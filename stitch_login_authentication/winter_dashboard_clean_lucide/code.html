@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FrostWire - Winter Dashboard</title>
+<script type="text/javascript" nonce="5e6c1902a64248c29ba77d87da3" src="//injections.adguard.org?ts=1775003536405&amp;type=content-script&amp;dmn=contribution.usercontent.google.com&amp;url=https%3A%2F%2Fcontribution.usercontent.google.com%2Fdownload%3Fc%3DCgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2E1YzZhZWNmOTQ3MDQ5YTlhMmQxY2VjYTI4Y2UxYzEzEgsSBxCb2MnlmRMYAZIBIwoKcHJvamVjdF9pZBIVQhM3ODg1NDg0MjgyOTYwMjk3MDE4%26filename%3D%26opi%3D89354086&amp;app=chrome.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=0&amp;stealth=1&amp;st-flash&amp;st-java&amp;st-dnt"></script><script type="text/javascript" nonce="5e6c1902a64248c29ba77d87da3" src="//injections.adguard.org?ts=1775003536405&amp;name=AdGuard%20Assistant&amp;type=user-script"></script><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<!-- Replace Material Symbols with Lucide CDN -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#4682B4", // Steel Blue from Design System
+              "secondary": "#00CED1", // Cyan accent
+              "surface": "#F8FAFC",
+              "background": "#F0F4F8",
+              "on-surface": "#1E293B",
+              "on-surface-variant": "#64748B",
+              "outline-variant": "#E2E8F0",
+              "surface-container-low": "#FFFFFF",
+              "surface-container": "#F1F5F9",
+              "primary-container": "#D1E9FF",
+              "secondary-container": "#E0F2F1"
+            },
+            fontFamily: {
+              "headline": ["Inter", "sans-serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {
+              "DEFAULT": "0.5rem",
+              "lg": "0.5rem", // ROUND_EIGHT from Design System
+              "xl": "0.75rem",
+              "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface min-h-screen">
+<!-- Sidebar -->
+<aside class="h-screen w-72 fixed left-0 bg-white border-r border-slate-200 flex flex-col gap-2 p-6 z-40 hidden md:flex">
+<div class="mb-10 px-2">
+<h1 class="text-2xl font-black text-primary tracking-tighter">FrostWire</h1>
+<p class="text-xs text-slate-400 font-medium uppercase tracking-wider">Atmospheric Messaging</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="bg-slate-100 text-primary rounded-lg flex items-center gap-3 px-4 py-3 transition-colors" href="#">
+<i class="w-5 h-5" data-lucide="message-square"></i>
+<span class="font-medium">Messages</span>
+</a>
+<a class="text-slate-500 hover:bg-slate-50 flex items-center gap-3 px-4 py-3 rounded-lg transition-colors" href="#">
+<i class="w-5 h-5" data-lucide="users"></i>
+<span class="font-medium">Contacts</span>
+</a>
+<a class="text-slate-500 hover:bg-slate-50 flex items-center gap-3 px-4 py-3 rounded-lg transition-colors" href="#">
+<i class="w-5 h-5" data-lucide="phone"></i>
+<span class="font-medium">Calls</span>
+</a>
+<a class="text-slate-500 hover:bg-slate-50 flex items-center gap-3 px-4 py-3 rounded-lg transition-colors" href="#">
+<i class="w-5 h-5" data-lucide="star"></i>
+<span class="font-medium">Favorites</span>
+</a>
+<a class="text-slate-500 hover:bg-slate-50 flex items-center gap-3 px-4 py-3 rounded-lg transition-colors mt-auto" href="#">
+<i class="w-5 h-5" data-lucide="settings"></i>
+<span class="font-medium">Settings</span>
+</a>
+</nav>
+<button class="mt-8 bg-primary text-white py-3 rounded-lg font-bold text-sm tracking-wide shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+            New Message
+        </button>
+</aside>
+<main class="md:ml-72 min-h-screen flex flex-col">
+<!-- Header -->
+<header class="w-full sticky top-0 bg-white/80 backdrop-blur-md z-30 border-b border-slate-100">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold tracking-tighter text-primary md:hidden">FrostWire</span>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-primary border-b-2 border-primary pb-1 font-bold text-sm" href="#">Inbox</a>
+<a class="text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="#">Groups</a>
+<a class="text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="#">Archived</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<i class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-4 h-4" data-lucide="search"></i>
+<input class="bg-slate-100 border-none rounded-full pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary/20 w-64" placeholder="Search conversations..." type="text"/>
+</div>
+<button class="p-2 text-slate-400 hover:text-primary hover:bg-slate-50 rounded-full transition-colors">
+<i class="w-5 h-5" data-lucide="bell"></i>
+</button>
+<button class="p-2 text-slate-400 hover:text-primary hover:bg-slate-50 rounded-full transition-colors">
+<i class="w-5 h-5" data-lucide="help-circle"></i>
+</button>
+<div class="h-10 w-10 rounded-full overflow-hidden border-2 border-white shadow-sm ml-2">
+<img alt="User profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSU0Tvs4k-qfXIpMbDC43mN9PIjAUDuFONYX8zOFhURo8eBOCanPpBjy_7B8gyCo0cQcoeYVrLTp0MG945Y_UhOWxTzxLdI3lIPtqWd0_GYNoFXnFcFfr_4VbcWs6XMRZqtP0romk43HuVQhMXMwVEfGg89Wfa0HpJzdiXlZ-5Rw6vcTGYjIfMgWACkN74seog2SSa3g5yeETsWgfcSzHeRKALdqXWVT-k5fi_rDc3aAapfFdmwbaDLtV5tJoRD89jf4i37-odHCs"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Content -->
+<section class="p-8 lg:p-12 max-w-screen-2xl mx-auto w-full space-y-12">
+<!-- Hero -->
+<div class="flex flex-col md:flex-row gap-8 md:items-end justify-between">
+<div class="max-w-2xl">
+<h2 class="text-6xl font-black tracking-tight text-slate-900 mb-4 leading-none">Silent Twilight</h2>
+<p class="text-on-surface-variant text-lg">Your conversations are frozen in time, waiting for your touch. Manage your atmospheric messaging with precision.</p>
+</div>
+<div class="flex gap-8 border-l border-slate-200 pl-8">
+<div>
+<span class="block text-[10px] text-primary uppercase tracking-[0.2em] font-bold mb-1">Local Temp</span>
+<span class="text-4xl font-headline font-light text-slate-900 tracking-tighter">-4°C</span>
+</div>
+<div>
+<span class="block text-[10px] text-primary uppercase tracking-[0.2em] font-bold mb-1">Atmosphere</span>
+<span class="text-4xl font-headline font-light text-slate-900 tracking-tighter">Icy Clear</span>
+</div>
+</div>
+</div>
+<!-- Featured Cards -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Main Activity Card -->
+<div class="md:col-span-8 bg-white rounded-lg p-8 relative overflow-hidden border border-slate-100 shadow-sm group">
+<div class="relative z-10 h-full flex flex-col justify-between">
+<div>
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-6 inline-block">Active Stream</span>
+<h3 class="text-4xl font-bold text-slate-900 mb-6 max-w-sm">Global Team Gathering</h3>
+<div class="flex -space-x-3 mb-8">
+<img alt="Team member" class="w-12 h-12 rounded-full border-4 border-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjw72jLhb0z2tPMOEaKeAQYoT3ROadIEfztwT5hj8foucO_Fj2Ytf0Ww1TA3QtYFurU8a8nMH0oba1GNk7IUA_fBIOcl5ZGKEDaoSlyNT_GDogL1TnSQCDxsk2zShxfxXVXVYYgU8wlMeSZf00h0Vh9Dsjqg6NaDmOeeoILkRxySMYqIRPSZGh0e597h0SKbACJ9494hNhgOONZd3msDxmqQ_5QesUQ4HoLPEKcY_FudvyC3AlDnQIwTf1QGCxXKp7o9Px9pHkR0U"/>
+<img alt="Team member" class="w-12 h-12 rounded-full border-4 border-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg5HJWsw4CmP_EXkg79UBaSMA5N3XqmFuro03TZke2k0VuwuDTSwtNhsN8RuYVWokJYVdn4QtFnxfkNo4z0m93mjnG0z0rrsJHBtG6JOW-vR15f9QDKs0vuHIU8t8-GtFvV-JTMPqwg-1PuIgvshTsYNTZhrTJwuBTtZmFXzRRNDpPyXXgw-C6ARczvrQfy2q45f5_UUa0sFyVYBQvZrj_3hXKzOSghUgS4A8vyHsBtJjiQXUOSUy0elBhtcKbbZCpFc-PTIuUZi4"/>
+<img alt="Team member" class="w-12 h-12 rounded-full border-4 border-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpf-2ywQe-np5xZxb0rd6eo6svzo_yKoyWbb1QGj6cVIDdPdqrVM-jxxfOYKUoH5qg9XeWE73SxL1Mn_5ubqDygsHGh9yiFL1XhV6EmkdTFeIWRey6z1QO9qsE4ORuibfPnmLqlCI1E59eCbunEW_WFZFGZk_a7EA8kLRN9vI3x7S4-w4JHrtsYWJGqIDREEQsQFhTZRvsfB39_krXvoOxzrJ8VigdvtIVi9lk_ARNHXh8PI-aC81520BOX0skXrF4CuM5Sl5N2Kw"/>
+<div class="w-12 h-12 rounded-full border-4 border-white bg-secondary flex items-center justify-center text-white text-xs font-bold">+14</div>
+</div>
+</div>
+<div class="flex gap-4">
+<button class="bg-primary text-white px-8 py-3 rounded-lg font-bold flex items-center gap-2 shadow-lg shadow-primary/20 hover:bg-primary/90">
+<i class="w-4 h-4" data-lucide="video"></i>
+                                Join Huddle
+                            </button>
+<button class="bg-slate-100 text-slate-700 px-8 py-3 rounded-lg font-bold hover:bg-slate-200 transition-colors">Details</button>
+</div>
+</div>
+<div class="absolute top-0 right-0 w-2/5 h-full opacity-40 group-hover:opacity-60 transition-opacity">
+<img alt="Winter mountains" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD88GtmxI-oGUCiXqtmabu3u_WU7hibG_el1CIVOiqB-XKh6RG8duthA37bWKwueeOm_-AaCpc-70FsidX7h0uWKcBuL_GPS23cEHZ-aG-sZtNKjzZ6wxFF8WISaqNiCwg2pT--LQdfBVsxryZgx391d20Qoi3UsHs4IsQ__uq9JWG8AxLVk-bSVxF9Z93TTjRYMJsJHGzaWPLFn2rXF8XHYljWKhY9y2cUDmDpIPtfIzNREe-qBGYof_ngG_Opo1iu-EDR9aAjOZQ"/>
+<div class="absolute inset-0 bg-gradient-to-l from-transparent via-white/20 to-white"></div>
+</div>
+</div>
+<!-- Secondary Stats -->
+<div class="md:col-span-4 flex flex-col gap-6">
+<div class="bg-white rounded-lg p-6 shadow-sm border border-slate-100 flex flex-col justify-between flex-1">
+<div class="flex justify-between items-start">
+<div class="p-3 bg-secondary/10 rounded-lg text-secondary">
+<i class="w-6 h-6" data-lucide="cloud"></i>
+</div>
+<span class="text-[10px] font-bold text-slate-400 tracking-widest">SYNCED</span>
+</div>
+<div class="mt-4">
+<p class="text-3xl font-black text-slate-900">12.4 GB</p>
+<p class="text-sm text-slate-500">Cloud Storage Used</p>
+</div>
+</div>
+<div class="bg-primary text-white rounded-lg p-6 shadow-xl shadow-primary/20 relative overflow-hidden flex-1">
+<div class="relative z-10 flex flex-col h-full justify-between">
+<i class="w-10 h-10 opacity-30" data-lucide="snowflake"></i>
+<div>
+<p class="text-xl font-bold">Premium Plan</p>
+<p class="text-xs opacity-70">Renews in 14 days</p>
+</div>
+</div>
+<div class="absolute -right-4 -bottom-4 text-white opacity-5">
+<i class="w-32 h-32" data-lucide="gem"></i>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Pulse -->
+<div class="space-y-6">
+<div class="flex justify-between items-center">
+<h4 class="text-2xl font-black tracking-tight text-slate-900">Recent Pulse</h4>
+<button class="text-primary text-sm font-bold flex items-center gap-2 group">
+                        View All Activity
+                        <i class="w-4 h-4 group-hover:translate-x-1 transition-transform" data-lucide="arrow-right"></i>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Message 1 -->
+<div class="bg-white rounded-lg p-6 border border-slate-100 hover:border-primary/30 transition-all cursor-pointer shadow-sm">
+<div class="flex items-center gap-4 mb-4">
+<img alt="Elena" class="w-12 h-12 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKUcvl9-YxQKmKYThX8eQdoUg_wYPA7X-m9DWFdugH4j8kmKaohe3dEX8_GCyP_LAHFvzjFBzFA9pX8kV9AUbNlSVORVcsfxY8l19SyzWm4XfIyO0QIUwGdBFjTGnE8Sfb4zkomJxePiSZo_BoknKhmwTGtwxjSacXk1t7-MhgEDl3abFmjBlcMkHL85CcVPed5xxtW-vnqil1YYNXO0-eH0sE0gA4uZuOOKqYKl1rWoGuLyFFR2FHGyHW80y3c1UteK-2pW6BpMc"/>
+<div>
+<p class="font-bold text-slate-900">Elena Frost</p>
+<p class="text-[10px] text-slate-400 font-medium uppercase tracking-tighter">2 minutes ago</p>
+</div>
+</div>
+<p class="text-sm text-slate-600 leading-relaxed line-clamp-2">The concept for the glacial interface looks promising. Should we finalize the cyan accents?</p>
+</div>
+<!-- Message 2 -->
+<div class="bg-white rounded-lg p-6 border border-slate-100 hover:border-primary/30 transition-all cursor-pointer shadow-sm">
+<div class="flex items-center gap-4 mb-4">
+<img alt="Marcus" class="w-12 h-12 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkJkFL7emiRsgoScplcHNRtd4Ip4GTS7EnOhUF2Kgy5eXHr2hTWxASGD5cibMSwrxmgHjcJVj1y8cPuVjIHu8loXRamVjdPj69kIEeA8nzTnYuFMnzKYSl0WYU1HukoM0nbiag0rAgfhJgRJai3FNLvDwbmlLd-tAW2g9evAF-3sqgD7Y5qAQJwHhE-LRHTizZJ5vr4TiAozNgE_divzknIgxzdeXFDKYCni1YauP4JAdarFFKE_m-N6Y3ixllmtHSsSXJoKvPzG0"/>
+<div>
+<p class="font-bold text-slate-900">Marcus Vane</p>
+<p class="text-[10px] text-slate-400 font-medium uppercase tracking-tighter">45 minutes ago</p>
+</div>
+</div>
+<p class="text-sm text-slate-600 leading-relaxed line-clamp-2">Just uploaded the latest performance metrics for the December release. It's looking cold!</p>
+</div>
+<!-- Message 3 -->
+<div class="bg-white rounded-lg p-6 border border-slate-100 hover:border-primary/30 transition-all cursor-pointer shadow-sm">
+<div class="flex items-center gap-4 mb-4">
+<img alt="Sarah" class="w-12 h-12 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi_6Jxz3EwXjtLFKANTuFzdPlejXdlXyjSeQNx33iKr7npKzZnInxQ6sDOvJno_cwYcHS2twyHV1EHggyX5TQEVi1SVJab157S_A5UULh_k-uzR0ef74ng9EqBkgZlHrTPqw5UP7jHfd3otgtOyfxjFOZjUoGPEq1Dv1g6Gawyu9ZUm6kMcp-QWHTsoGck4BlCU-44a0ddNq6C-800uMUnZufpqq1SCgg5miQV9A66QNo54rhWs23qECeHxWb9H0-fLh6lcU95UCI"/>
+<div>
+<p class="font-bold text-slate-900">Sarah North</p>
+<p class="text-[10px] text-slate-400 font-medium uppercase tracking-tighter">3 hours ago</p>
+</div>
+</div>
+<p class="text-sm text-slate-600 leading-relaxed line-clamp-2">The server nodes in the Arctic region are showing 99.9% uptime. Ready for the winter peak.</p>
+</div>
+</div>
+</div>
+<!-- Network Visualization -->
+<div class="bg-slate-900 rounded-lg overflow-hidden text-white shadow-2xl">
+<div class="grid grid-cols-1 md:grid-cols-2">
+<div class="p-10 space-y-8">
+<div>
+<h4 class="text-3xl font-black tracking-tight mb-3">Network Map</h4>
+<p class="text-slate-400 leading-relaxed">Visualizing active connections across the northern hemisphere. Your presence is established in 12 frozen zones.</p>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-4 bg-white/5 p-4 rounded-lg">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-bold flex-1">Reykjavik Node</span>
+<span class="text-slate-500 text-xs font-mono">42ms</span>
+</div>
+<div class="flex items-center gap-4 bg-white/5 p-4 rounded-lg">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-bold flex-1">Oslo Server</span>
+<span class="text-slate-500 text-xs font-mono">38ms</span>
+</div>
+<div class="flex items-center gap-4 bg-white/5 p-4 rounded-lg opacity-60">
+<span class="w-2 h-2 rounded-full bg-slate-500"></span>
+<span class="font-bold flex-1">Toronto Gateway</span>
+<span class="text-slate-500 text-xs font-mono">112ms</span>
+</div>
+</div>
+</div>
+<div class="h-64 md:h-auto relative">
+<img alt="Network Map Overlay" class="w-full h-full object-cover grayscale brightness-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6f6mTEul8t5gx2NbdsyBYF7aFv9lAUzvsyhrbkdjpTc9tqttuvLL4Ox0ciT9X2rIQp-jR7DU_QMlIlgRe2MfGfrUnncPuVtI0Pe_l8NVS8leuSdSohrF5hoRsSc6NxbrqcY_66H7QBhlTVisSvoO_kDV5hWiQIOZdpkJmkHldkdyihdO4iZRluH5vKwezPQZVcc6EAolgJVfXhVAyQ6eKzE_moWf6dddBJ9hMFv6zQhz468XqLbwqL-JzP60cGiy4tOJ3deeoQfI"/>
+<div class="absolute inset-0 bg-primary/20 mix-blend-overlay"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-slate-900 to-transparent"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="mt-auto p-12 border-t border-slate-100 bg-white flex flex-col md:flex-row justify-between items-center gap-4 text-slate-400 text-sm">
+<p>© 2024 FrostWire. All rights preserved in ice.</p>
+<div class="flex gap-8">
+<a class="hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms</a>
+<a class="hover:text-primary transition-colors" href="#">Status</a>
+</div>
+</footer>
+</main>
+<!-- Mobile Nav -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-4 bg-white/90 backdrop-blur-lg border-t border-slate-100 md:hidden">
+<a class="flex flex-col items-center justify-center text-primary" href="#">
+<i class="w-6 h-6" data-lucide="message-square"></i>
+<span class="text-[10px] font-bold uppercase mt-1">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400" href="#">
+<i class="w-6 h-6" data-lucide="users"></i>
+<span class="text-[10px] font-bold uppercase mt-1">People</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400" href="#">
+<i class="w-6 h-6" data-lucide="phone"></i>
+<span class="text-[10px] font-bold uppercase mt-1">Calls</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400" href="#">
+<i class="w-6 h-6" data-lucide="user"></i>
+<span class="text-[10px] font-bold uppercase mt-1">Me</span>
+</a>
+</nav>
+<script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body></html>
