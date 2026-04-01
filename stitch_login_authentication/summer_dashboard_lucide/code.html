@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Oasis Chat - Summer Dashboard</title>
+<!-- Google Fonts: Inter -->
+<script type="text/javascript" nonce="5e6c1902a64248c29ba77d87da3" src="//injections.adguard.org?ts=1775003536405&amp;type=content-script&amp;dmn=contribution.usercontent.google.com&amp;url=https%3A%2F%2Fcontribution.usercontent.google.com%2Fdownload%3Fc%3DCgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzYyYjdiNjAxYTUyOTRkYmFhNTdjMTMzMTY0YjlhYmQ3EgsSBxCb2MnlmRMYAZIBIwoKcHJvamVjdF9pZBIVQhM3ODg1NDg0MjgyOTYwMjk3MDE4%26filename%3D%26opi%3D89354086&amp;app=chrome.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=0&amp;stealth=1&amp;st-flash&amp;st-java&amp;st-dnt"></script><script type="text/javascript" nonce="5e6c1902a64248c29ba77d87da3" src="//injections.adguard.org?ts=1775003536405&amp;name=AdGuard%20Assistant&amp;type=user-script"></script><link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed": "#ffd709",
+                        "error-container": "#fb5151",
+                        "surface": "#f3f7f8",
+                        "outline": "#737879",
+                        "inverse-primary": "#00bdfd",
+                        "secondary-fixed-dim": "#efc900",
+                        "on-error": "#ffefee",
+                        "tertiary-container": "#a6a9ff",
+                        "tertiary": "#4c4fb7",
+                        "on-surface": "#2b2f31",
+                        "surface-container-high": "#dde4e5",
+                        "secondary": "#6c5a00",
+                        "primary-fixed-dim": "#00afea",
+                        "surface-container-low": "#edf2f3",
+                        "surface-bright": "#f3f7f8",
+                        "on-primary-fixed-variant": "#003e56",
+                        "secondary-container": "#ffd709",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#1d1d8a",
+                        "tertiary-fixed": "#a6a9ff",
+                        "surface-container": "#e4e9ea",
+                        "on-tertiary": "#f4f1ff",
+                        "on-tertiary-fixed": "#040062",
+                        "on-primary-fixed": "#001a27",
+                        "secondary-dim": "#5e4e00",
+                        "on-background": "#2b2f31",
+                        "surface-tint": "#006386",
+                        "on-error-container": "#570008",
+                        "on-surface-variant": "#575c5d",
+                        "on-primary-container": "#003549",
+                        "on-secondary-fixed": "#453900",
+                        "surface-variant": "#d7dee0",
+                        "tertiary-dim": "#3f42aa",
+                        "inverse-surface": "#0a0f10",
+                        "background": "#f3f7f8",
+                        "inverse-on-surface": "#999e9f",
+                        "primary-dim": "#005675",
+                        "error": "#b31b25",
+                        "primary": "#006386",
+                        "error-dim": "#9f0519",
+                        "primary-fixed": "#00bdfd",
+                        "on-secondary-fixed-variant": "#665500",
+                        "on-tertiary-fixed-variant": "#272993",
+                        "surface-container-highest": "#d7dee0",
+                        "outline-variant": "#a9aeaf",
+                        "tertiary-fixed-dim": "#969aff",
+                        "on-secondary": "#fff2cd",
+                        "primary-container": "#00bdfd",
+                        "on-primary": "#e7f5ff",
+                        "surface-dim": "#ced6d7",
+                        "on-secondary-container": "#5b4b00"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        /* Custom Oasis Blur Decoration */
+        .oasis-blur {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #00bdfd 0%, transparent 70%);
+            filter: blur(100px);
+            opacity: 0.15;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen selection:bg-primary-container selection:text-on-primary-container overflow-hidden">
+<!-- Oasis Decorative Background Elements -->
+<div class="oasis-blur top-[-200px] left-[-200px]"></div>
+<div class="oasis-blur bottom-[-200px] right-[-200px] bg-secondary-container/20"></div>
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-8 h-16 w-full bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl shadow-2xl shadow-cyan-900/5">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-black italic text-cyan-700 dark:text-cyan-300">Oasis Chat</span>
+<div class="hidden md:flex items-center gap-6">
+<a class="font-inter tracking-tight headline-lg text-cyan-600 dark:text-cyan-400 border-b-2 border-cyan-500 py-1" href="#">Dashboard</a>
+<a class="font-inter tracking-tight headline-lg text-slate-500 dark:text-slate-400 hover:bg-cyan-50/50 transition-colors py-1" href="#">Community</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="bg-surface-container-high/50 border-none rounded-full pl-10 pr-4 py-2 w-64 focus:ring-2 focus:ring-primary-fixed transition-all text-sm" placeholder="Search conversations..." type="text"/>
+</div>
+<button class="p-2 rounded-full hover:bg-cyan-50/50 transition-colors text-slate-500">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<button class="p-2 rounded-full hover:bg-cyan-50/50 transition-colors text-slate-500">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-fixed">
+<img alt="User avatar" data-alt="close-up portrait of a stylish person with clear blue sky background, soft summer lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDn32kByAuW3ZdJcuTP_YCHj-qc73FUansZGwt9MFJ0-vDlN2jiEXhbTp6PAdXzqysdzKvG8JOKkZqcZzsBPQ5tXyjto9btfTy2879qfGniJPC7WcmSp9WQyG-5gEKhDe6kFCiOJe7zUewDGybtjZmq9L3b7qNnmpZ8sT-fSOO4SxEgCT0CuEKTDflB9E_WcZfYy2rzxPpCov4YXV5FTYJdEQ4z5wCxFjkyBgiMNFVbjCZi7lfM4lwnBljU9Nhn5T7FiOlsvDOFNfg"/>
+</div>
+</div>
+</nav>
+<div class="flex pt-16 h-screen">
+<!-- SideNavBar (Shared Component) -->
+<aside class="h-screen w-64 border-r-0 bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-2xl flex flex-col h-full p-4 gap-2 hidden lg:flex">
+<div class="flex items-center gap-3 px-2 mb-6">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm" style="font-variation-settings: 'FILL' 1;">waves</span>
+</div>
+<div>
+<h2 class="text-xl font-bold text-cyan-800 dark:text-cyan-200">Cooling Oasis</h2>
+<p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Chat Room</p>
+</div>
+</div>
+<button class="mb-4 flex items-center justify-center gap-2 w-full py-3 bg-gradient-to-r from-cyan-600 to-cyan-400 text-white rounded-xl shadow-lg shadow-cyan-200 font-bold text-sm hover:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined text-sm">add</span>
+                New Message
+            </button>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-cyan-600 to-cyan-400 text-white rounded-xl shadow-lg shadow-cyan-200 font-inter text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+                    Messages
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-cyan-600 hover:bg-white transition-all hover:translate-x-1 duration-300 font-inter text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+                    Channels
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-cyan-600 hover:bg-white transition-all hover:translate-x-1 duration-300 font-inter text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="person_book">person_book</span>
+                    Contacts
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-cyan-600 hover:bg-white transition-all hover:translate-x-1 duration-300 font-inter text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+                    Archive
+                </a>
+</div>
+<div class="mt-auto border-t border-slate-200/50 pt-4 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:text-cyan-600 transition-all font-inter text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                    Settings
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-red-500 hover:bg-red-50 transition-all font-inter text-sm font-medium rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                    Log Out
+                </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 overflow-y-auto px-8 py-8 space-y-12">
+<!-- Hero Bento Header -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Status Card -->
+<div class="lg:col-span-2 bg-surface-container-lowest p-8 rounded-[2rem] relative overflow-hidden shadow-sm">
+<div class="relative z-10 flex flex-col justify-between h-full">
+<div>
+<span class="px-4 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold uppercase tracking-widest mb-4 inline-block">Online</span>
+<h1 class="display-lg text-4xl lg:text-5xl font-black text-on-surface tracking-tighter leading-none mb-4">
+                                Good Morning, <br/><span class="text-primary italic">Summer Breeze.</span>
+</h1>
+<p class="body-md text-on-surface-variant max-w-md">The current temperature is a refreshing 24°C. You have 3 unread threads waiting for your chill response.</p>
+</div>
+<div class="flex gap-4 mt-8">
+<button class="bg-primary text-white px-8 py-3 rounded-full font-bold shadow-xl shadow-primary/20 hover:scale-105 transition-transform">View Inbox</button>
+<button class="text-primary font-bold px-8 py-3 rounded-full border border-primary/20 hover:bg-primary/5 transition-colors">Calendar</button>
+</div>
+</div>
+<!-- Decorative Refractive Circle -->
+<div class="absolute top-[-50px] right-[-50px] w-64 h-64 bg-primary-container rounded-full opacity-20 blur-3xl"></div>
+<img alt="Summer beach" class="absolute right-0 bottom-0 w-1/3 h-full object-cover opacity-10 pointer-events-none" data-alt="high-angle shot of turquoise ocean water meeting golden sand, ripples in the water, minimalist summer aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqtvlnGqYMJumI0gJQFzA6OSUGCq_45Kya5KBdZ1PbgFSpKDOKzHr79z66-PP2afuuu522WT6tMU4jaLgGDDW616OJEzLvF15J_u4bMq_2slpjcG_ZbQO5nO9FSHy84hOLlPA45pk8VghwrtlF6V7dac6nhV3jPfB80tj8fwjo20h9C2JQcja7yZWs2F1jbhxDS_oFCbrntCn-TBM3em_PTmUJC4Ivbgl0W07spAX6TR_D4rTCXQETw5VU0NLJOIlw2oqi8TcYFEo"/>
+</div>
+<!-- Weather/Mood Card -->
+<div class="bg-gradient-to-br from-secondary-container to-secondary-fixed p-8 rounded-[2rem] flex flex-col justify-between shadow-lg shadow-secondary/10">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-on-secondary-container text-5xl">sunny</span>
+<span class="text-on-secondary-container font-black text-2xl">24°</span>
+</div>
+<div>
+<h3 class="headline-lg text-on-secondary-container font-bold leading-tight">Perfect Chat Weather</h3>
+<p class="text-on-secondary-container/80 text-sm mt-2">Humidity 45% • UV Index 8 (Very High)</p>
+</div>
+</div>
+</section>
+<!-- Chat Interface Mockup (Asymmetric Layout) -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Active Threads Column -->
+<div class="lg:col-span-4 space-y-6">
+<h3 class="text-on-surface-variant text-xs font-black uppercase tracking-widest px-2">Recent Reflections</h3>
+<div class="space-y-4">
+<!-- Message Item 1 -->
+<div class="group bg-surface-container-low p-5 rounded-3xl flex gap-4 cursor-pointer hover:bg-surface-container-lowest transition-all hover:shadow-xl hover:shadow-cyan-900/5">
+<div class="relative">
+<img alt="Portrait" class="w-14 h-14 rounded-2xl object-cover" data-alt="close-up of a smiling woman with freckles, natural lighting, soft focus background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMXnB90CZ3pFgHOKJegN7HrPsRJGPRLfKIS9rlMZcpHZb-kLba-WHCFJDD9NXKYcraLKr8nILK03MGbbs1rEkhsPcHHg1sTGK3OZt6NcRO5oAFNsgoPMEDM3SDI6hqIK3zoaqFmFFlKphrBioq6EhNPQotJxuVtY8xbLAJAjXyoZMSuvCmIvjy17dwgFghePOJYdnPNBjBodXnTYHgBQZhTXNN1RDeX0vLxu-2NOAsq_rwqrZxNq1wrN2kUpgdq0h8wbm0KkwOA0k"/>
+<div class="absolute bottom-0 right-0 w-4 h-4 bg-green-400 border-4 border-surface-container-low rounded-full"></div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<h4 class="font-bold text-on-surface">Alex Rivers</h4>
+<span class="text-[10px] text-slate-400">12:45 PM</span>
+</div>
+<p class="text-sm text-on-surface-variant line-clamp-1">The poolside meeting was great. Let's sync...</p>
+</div>
+</div>
+<!-- Message Item 2 -->
+<div class="group bg-surface-container-lowest p-5 rounded-3xl flex gap-4 cursor-pointer shadow-sm border border-primary/5">
+<div class="relative">
+<img alt="Portrait" class="w-14 h-14 rounded-2xl object-cover" data-alt="professional man in a white linen shirt, sunny outdoor setting, Mediterranean vibe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCICzJB5RELpysGIOmn4-ZCF8P4gBNE4ddFMBHMUTGPFWhXPhPBQDXc5NGOoD9MxqWnYEROJMUdEGYUdHajL8VZ6nCZisL0x5BApxAuxOQHyYOUo9i-HX955DlaT_FjHLoZiiu6MPXL2ifh8cYDbanSWtydqLpVksx4Tzh8OsHFAfRt93b7ePYWvmcq_3cCC8pNL3ezhwbjGs2XftEzsIqVnv0ZPh71mEcY9-5dC-m4teI0K5rDP9HIGInL73bKgSo_u1eMoZDU-yE"/>
+<div class="absolute bottom-0 right-0 w-4 h-4 bg-secondary-fixed border-4 border-surface-container-lowest rounded-full"></div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<h4 class="font-bold text-on-surface">Jordan Lake</h4>
+<span class="text-[10px] text-primary font-bold">Just now</span>
+</div>
+<p class="text-sm text-on-surface font-semibold line-clamp-1">Did you see the latest designs?</p>
+</div>
+</div>
+<!-- Message Item 3 -->
+<div class="group bg-surface-container-low p-5 rounded-3xl flex gap-4 cursor-pointer hover:bg-surface-container-lowest transition-all">
+<div class="w-14 h-14 rounded-2xl bg-tertiary-container/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary">group</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<h4 class="font-bold text-on-surface">Design Oasis</h4>
+<span class="text-[10px] text-slate-400">Yesterday</span>
+</div>
+<p class="text-sm text-on-surface-variant line-clamp-1">Sarah: Check out this color palette.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Conversation Display -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-[2.5rem] shadow-2xl shadow-cyan-900/5 h-[600px] flex flex-col">
+<!-- Chat Header -->
+<div class="px-8 py-6 flex justify-between items-center bg-white/50 backdrop-blur-md rounded-t-[2.5rem]">
+<div class="flex items-center gap-4">
+<img alt="Portrait" class="w-12 h-12 rounded-full object-cover" data-alt="professional man in a white linen shirt, sunny outdoor setting, Mediterranean vibe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrGaPrWbcAwlQqMJuWS4sJmDMaPUwgUPqYM-lsLrTwn3nqTBLAHGDWSTIK609Lzf3Vsg-hbFASAbJSJzVIj7BidDgVxejU3KpirFpzGGi8URAfPpC9CGdmhLmTiyYpnRir47RHfN5xAvovipyi8YeA2rvHe67TviJglZS3_QXyLLFcI_dva36Sk452h3GPUXdDxE6RE1XCyXlqTnJInQmv4bkqdsauGekg1029swgGKFdI33E5oVY_AJgHb1DngGEhm18eCbW_oVc"/>
+<div>
+<h3 class="font-black text-lg">Jordan Lake</h3>
+<p class="text-xs text-green-500 font-bold uppercase tracking-widest">Active Now</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="p-3 bg-surface-container hover:bg-primary-container/20 transition-colors rounded-2xl text-primary">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+</button>
+<button class="p-3 bg-surface-container hover:bg-primary-container/20 transition-colors rounded-2xl text-primary">
+<span class="material-symbols-outlined" data-icon="videocam">videocam</span>
+</button>
+<button class="p-3 bg-surface-container hover:bg-primary-container/20 transition-colors rounded-2xl text-slate-400">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Chat Messages Area -->
+<div class="flex-1 overflow-y-auto p-8 space-y-8">
+<!-- Date Marker -->
+<div class="flex justify-center">
+<span class="px-4 py-1 bg-surface-container text-slate-500 rounded-full text-[10px] font-bold uppercase tracking-widest">Today, June 21</span>
+</div>
+<!-- Recipient Message -->
+<div class="flex gap-4 max-w-[80%]">
+<div class="flex-shrink-0 mt-auto">
+<img alt="Avatar" class="w-8 h-8 rounded-full" data-alt="placeholder avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1W3dieFy5srGrt3LFtt27FF-YdsjgM0set8imzAx4Fn5h99EyF-viCnZ-RymV4nimO6XFW6ZEO-iCl6uty4Jpz_LGVhoN8YOqT1UXK-uvHS5_011T1mAWSmUxUykIQWmiOSGu4CcQsbjcJMG8BLGlNKvT12P0zzC4d9oUr3pyJsufIKItyvhptIp8jNlkj-p4gVLu3Bf4jxeiQHfoG_wZPuFue-B0YECKh3i6-xaCljrdcDKf82P4EYpyoCavD7FT4iUItGojoMQ"/>
+</div>
+<div class="bg-surface-container-low p-6 rounded-t-[2rem] rounded-br-[2rem] text-on-surface shadow-sm">
+<p class="text-sm leading-relaxed">Hey! Hope you're enjoying the sun. I've uploaded the new "Cooling Oasis" brand anchors to the shared drive. Let me know what you think about the Gold accents. ☀️</p>
+</div>
+</div>
+<!-- Sender Message -->
+<div class="flex gap-4 max-w-[80%] ml-auto flex-row-reverse">
+<div class="bg-gradient-to-br from-primary to-primary-dim p-6 rounded-t-[2rem] rounded-bl-[2rem] text-white shadow-xl shadow-primary/20">
+<p class="text-sm leading-relaxed">Perfect timing! I was just about to look into those. The Gold accents really give it that "shimmer on water" feel we were aiming for.</p>
+</div>
+</div>
+<!-- Recipient Message with Image -->
+<div class="flex gap-4 max-w-[80%]">
+<div class="flex-shrink-0 mt-auto">
+<img alt="Avatar" class="w-8 h-8 rounded-full" data-alt="placeholder avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuIKWlZ7htVUsFkQgeK-v_1MefwmfpW6OAMij-El971YSi5GPFRJN67KuSBMfYalnI0otaLR_rsgTri_ibPSkomdPlJU6CSpQKH0KJtPF5M7ko3ocIHZjPFnroDV9M4Ma0UQ44jlZWkdK0oTEGKmvqs01r09qKrSt_GYvRdlRqPEgw96Ww-_YJc5FkwBCJWqeTPjTfZGKOdIMhdPYR_wFZI2Uz32lsOTGqQ1m7gTFACFKIFgYt0k2UAvyxrL4tukYW9aE-V0qZTsM"/>
+</div>
+<div class="space-y-4">
+<div class="bg-surface-container-low p-6 rounded-t-[2rem] rounded-br-[2rem] text-on-surface shadow-sm">
+<p class="text-sm leading-relaxed">Exactly. Here's a quick preview of the hero section with the refractive fluidity effect applied.</p>
+</div>
+<div class="rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+<img alt="UI Design" class="w-full h-48 object-cover" data-alt="modern minimalist interior with abstract art on the wall and soft sunlight streaming through a window" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmCL1qqASkrraM1fl2wl52SQPJ3OltYgSObeK10ntbs2QA2dazqyeBVkTsQ2Z66OW2DiOi-0E2s78GeVHLzNwINiZVg8L2sNzAPtjhbpMHtFxBxoPX5B-yOZDSfpPsk_6mMrhUhf4vdP4g7YK1AL_1n6u4NbOs3jGbkYpgj_xwyAEpU-1Jf6g3eZm1Ul1Oiu5ZqlQaNgFkljLAUW9lPFz3XUdVu41-CRTfKrcJL8DvkSEgv2zmXrWNhg0ndmu_B-g78fvgNR0uHIo"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Chat Input Area -->
+<div class="p-8">
+<div class="flex items-center gap-4 bg-surface-container rounded-3xl px-6 py-3">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+<input class="bg-transparent border-none focus:ring-0 flex-1 text-sm text-on-surface placeholder:text-slate-400" placeholder="Type a cool message..." type="text"/>
+<div class="flex gap-2">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">mood</span>
+</button>
+<button class="w-10 h-10 bg-primary text-white rounded-xl flex items-center justify-center hover:scale-105 transition-transform shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom Stats / Analytics Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-white p-8 rounded-[2rem] shadow-sm flex flex-col gap-4">
+<span class="material-symbols-outlined text-cyan-500 text-3xl">insights</span>
+<div>
+<p class="text-xs font-black uppercase text-slate-400 tracking-widest">Active Channels</p>
+<h4 class="text-3xl font-black text-on-surface">12</h4>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="w-3/4 h-full bg-primary"></div>
+</div>
+</div>
+<div class="bg-white p-8 rounded-[2rem] shadow-sm flex flex-col gap-4">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-3xl">bolt</span>
+<div>
+<p class="text-xs font-black uppercase text-slate-400 tracking-widest">Team Velocity</p>
+<h4 class="text-3xl font-black text-on-surface">98%</h4>
+</div>
+<div class="flex items-center gap-2 text-green-500 text-xs font-bold">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>+4% from yesterday</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-[2rem] shadow-sm flex flex-col gap-4">
+<span class="material-symbols-outlined text-tertiary text-3xl">timer</span>
+<div>
+<p class="text-xs font-black uppercase text-slate-400 tracking-widest">Avg Response</p>
+<h4 class="text-3xl font-black text-on-surface">2m 14s</h4>
+</div>
+<p class="text-xs text-slate-400">Peak performance achieved</p>
+</div>
+<div class="bg-inverse-surface p-8 rounded-[2rem] shadow-2xl flex flex-col justify-between text-white overflow-hidden relative">
+<div class="relative z-10">
+<p class="text-xs font-black uppercase text-white/50 tracking-widest">Storage Used</p>
+<h4 class="text-3xl font-black mt-2">12.4 GB</h4>
+</div>
+<button class="relative z-10 mt-6 w-full py-2 bg-white/10 hover:bg-white/20 transition-colors border border-white/20 rounded-xl text-xs font-bold">Upgrade Oasis</button>
+<!-- Decorative Background for Storage Card -->
+<div class="absolute bottom-[-20%] right-[-10%] w-32 h-32 bg-primary rounded-full blur-[60px] opacity-30"></div>
+</div>
+</section>
+</main>
+</div>
+<!-- Responsive Navigation (Mobile only) -->
+<nav class="fixed bottom-0 left-0 w-full bg-white/90 backdrop-blur-xl md:hidden flex justify-around items-center h-20 px-4 shadow-[0_-10px_40px_rgba(0,0,0,0.05)] z-50">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<span class="text-[10px] font-bold">Chats</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[10px] font-bold">Spaces</span>
+</button>
+<button class="w-14 h-14 bg-gradient-to-tr from-primary to-primary-container rounded-full flex items-center justify-center text-white shadow-lg shadow-primary/40 -translate-y-6 border-4 border-surface">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">explore</span>
+<span class="text-[10px] font-bold">Explore</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold">Profile</span>
+</button>
+</nav>
+</body></html>
