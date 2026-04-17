@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Authentication Components | The Atrium</title>
+<script type="text/javascript" nonce="cd457305fdec48be808d77f317d" src="//injections.adguard.org?ts=1776392733927&amp;type=content-script&amp;dmn=contribution.usercontent.google.com&amp;url=https%3A%2F%2Fcontribution.usercontent.google.com%2Fdownload%3Fc%3DCgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzFmMWEyZWFiYmU3NTQzNDlhNzBmMTUzZTk2ODI5ZTRkEgsSBxCb2MnlmRMYAZIBIwoKcHJvamVjdF9pZBIVQhM3ODg1NDg0MjgyOTYwMjk3MDE4%26filename%3D%26opi%3D89354086&amp;app=chrome.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1&amp;stealth=1&amp;st-flash&amp;st-java&amp;st-dnt"></script><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#2f3131",
+                        "outline-variant": "#bec8d1",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#24a1de",
+                        "tertiary-fixed": "#ffddb7",
+                        "on-primary-fixed": "#001e2e",
+                        "surface-container-high": "#e8e8e8",
+                        "surface": "#f9f9f9",
+                        "error": "#ba1a1a",
+                        "secondary": "#5a5f63",
+                        "primary": "#00658f",
+                        "on-secondary-container": "#5e6367",
+                        "tertiary": "#855400",
+                        "outline": "#6f7881",
+                        "on-tertiary-container": "#462a00",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#42474b",
+                        "error-container": "#ffdad6",
+                        "on-background": "#1a1c1c",
+                        "surface-bright": "#f9f9f9",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "tertiary-container": "#d18812",
+                        "primary-fixed": "#c8e6ff",
+                        "background": "#f9f9f9",
+                        "surface-container-low": "#f3f3f3",
+                        "on-secondary-fixed": "#171c20",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#c2c7cb",
+                        "on-surface": "#1a1c1c",
+                        "on-primary-container": "#00344c",
+                        "surface-variant": "#e2e2e2",
+                        "surface-dim": "#dadada",
+                        "surface-container": "#eeeeee",
+                        "secondary-fixed": "#dfe3e7",
+                        "surface-container-highest": "#e2e2e2",
+                        "primary-fixed-dim": "#86cfff",
+                        "inverse-on-surface": "#f1f1f1",
+                        "secondary-container": "#dce0e5",
+                        "on-primary-fixed-variant": "#004c6d",
+                        "surface-tint": "#00658f",
+                        "tertiary-fixed-dim": "#ffb95d",
+                        "on-surface-variant": "#3e4850",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#86cfff",
+                        "on-tertiary-fixed": "#2a1700"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<nav class="fixed top-0 w-full z-50 glass-panel shadow-sm shadow-zinc-900/5">
+<div class="flex items-center justify-between px-6 py-4 max-w-screen-2xl mx-auto">
+<span class="text-xl font-bold tracking-tight text-zinc-900">The Atrium</span>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-sky-600 font-semibold font-inter body-md leading-relaxed" href="#">Components</a>
+<a class="text-zinc-500 hover:bg-zinc-100 transition-colors font-inter body-md leading-relaxed" href="#">Documentation</a>
+<a class="text-zinc-500 hover:bg-zinc-100 transition-colors font-inter body-md leading-relaxed" href="#">Security</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-sky-600" data-icon="help">help</span>
+<span class="material-symbols-outlined text-sky-600" data-icon="settings">settings</span>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-6 max-w-screen-xl mx-auto">
+<header class="mb-16">
+<h1 class="text-4xl font-extrabold tracking-tight text-on-surface mb-4 headline-sm">Authentication Framework</h1>
+<p class="text-on-surface-variant max-w-2xl body-md leading-relaxed">
+                Experience the next generation of secure access. Our Digital Atrium components prioritize cryptographic security with a refined editorial aesthetic.
+            </p>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<section class="md:col-span-7 lg:col-span-8 flex flex-col gap-8">
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm border border-outline-variant/15">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h2 class="text-xl font-bold text-on-surface">Universal Single Sign-On</h2>
+<p class="text-sm text-on-surface-variant">Secure authentication via trusted identity providers.</p>
+</div>
+<span class="material-symbols-outlined text-primary" data-icon="shield_with_heart">shield_with_heart</span>
+</div>
+<div class="space-y-4">
+<button class="w-full flex items-center justify-between px-6 py-4 bg-surface-container-low hover:bg-surface-container-high transition-all rounded-xl active:scale-95 group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center bg-surface-container-lowest rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-on-surface" data-icon="google">google</span>
+</div>
+<span class="font-semibold text-on-surface">Continue with Google</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between px-6 py-4 bg-surface-container-low hover:bg-surface-container-high transition-all rounded-xl active:scale-95 group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center bg-surface-container-lowest rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-on-surface" data-icon="terminal">terminal</span>
+</div>
+<span class="font-semibold text-on-surface">Continue with GitHub</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between px-6 py-4 bg-surface-container-low hover:bg-surface-container-high transition-all rounded-xl active:scale-95 group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center bg-surface-container-lowest rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-on-surface" data-icon="apple">ios</span>
+</div>
+<span class="font-semibold text-on-surface">Continue with Apple</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<div class="mt-8 flex items-center gap-4 py-4 px-6 bg-primary-container/10 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="info">info</span>
+<p class="text-xs text-on-primary-container font-medium">SSO credentials are never stored on our local servers, ensuring maximum privacy.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="bg-surface-container-low rounded-xl p-6 border border-outline-variant/15 flex flex-col gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="mail">mail</span>
+<h3 class="font-bold text-on-surface">Magic Link</h3>
+<p class="text-sm text-on-surface-variant">Passwordless access delivered straight to your verified inbox.</p>
+<div class="mt-auto pt-4">
+<button class="text-primary font-semibold text-sm hover:underline flex items-center gap-1">
+                                Configure service <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-6 border border-outline-variant/15 flex flex-col gap-4">
+<span class="material-symbols-outlined text-tertiary" data-icon="key">key</span>
+<h3 class="font-bold text-on-surface">MFA Hardware</h3>
+<p class="text-sm text-on-surface-variant">Full support for physical security keys and FIDO2 protocols.</p>
+<div class="mt-auto pt-4">
+<button class="text-tertiary font-semibold text-sm hover:underline flex items-center gap-1">
+                                Register key <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<section class="md:col-span-5 lg:col-span-4">
+<div class="bg-inverse-surface text-inverse-on-surface rounded-xl p-8 shadow-xl relative overflow-hidden h-full">
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-10">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary" data-icon="fingerprint" data-weight="fill" style="font-variation-settings: 'FILL' 1;">fingerprint</span>
+</div>
+<h2 class="text-xl font-bold">Passkey Login</h2>
+</div>
+<div class="space-y-8">
+<div class="flex flex-col items-center justify-center py-12 px-6 border border-white/10 rounded-2xl bg-white/5 backdrop-blur-md">
+<div class="relative mb-6">
+<div class="absolute inset-0 bg-primary-container/20 animate-ping rounded-full"></div>
+<div class="relative w-20 h-20 bg-primary-container/30 border border-primary-container/50 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container text-4xl" data-icon="contactless">contactless</span>
+</div>
+</div>
+<p class="text-center font-medium mb-1">Verify Identity</p>
+<p class="text-center text-xs text-white/50">Use Face ID, Touch ID, or your device passcode to sign in instantly.</p>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between text-xs font-mono text-white/40 border-b border-white/5 pb-2">
+<span>PROTOCOL</span>
+<span class="text-white/80">WebAuthn / FIDO2</span>
+</div>
+<div class="flex items-center justify-between text-xs font-mono text-white/40 border-b border-white/5 pb-2">
+<span>ENCRYPTION</span>
+<span class="text-white/80">Ed25519</span>
+</div>
+<div class="flex items-center justify-between text-xs font-mono text-white/40">
+<span>SECURITY LEVEL</span>
+<span class="text-primary-container font-bold">CRITICAL</span>
+</div>
+</div>
+<button class="w-full py-4 bg-primary text-on-primary rounded-full font-bold shadow-lg shadow-primary/25 hover:bg-primary-container transition-all active:scale-[0.98]">
+                                Use Passkey
+                            </button>
+</div>
+</div>
+<div class="absolute -bottom-24 -right-24 w-64 h-64 bg-primary/20 rounded-full blur-[80px]"></div>
+<div class="absolute top-10 right-10 w-24 h-24 bg-tertiary/10 rounded-full blur-[40px]"></div>
+</div>
+</section>
+</div>
+<section class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="md:col-span-3">
+<h3 class="text-lg font-bold mb-6 text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+                    Authentication Performance
+                </h3>
+</div>
+<div class="bg-surface-container rounded-xl p-1 relative overflow-hidden group">
+<div class="bg-surface-container-lowest rounded-[10px] p-6 h-full transition-transform group-hover:-translate-y-1">
+<p class="text-label-sm text-outline uppercase tracking-widest mb-1">Success Rate</p>
+<p class="text-3xl font-bold text-on-surface">99.98%</p>
+<div class="mt-4 h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[99.98%]"></div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container rounded-xl p-1 relative overflow-hidden group">
+<div class="bg-surface-container-lowest rounded-[10px] p-6 h-full transition-transform group-hover:-translate-y-1">
+<p class="text-label-sm text-outline uppercase tracking-widest mb-1">Latency</p>
+<p class="text-3xl font-bold text-on-surface">142ms</p>
+<div class="mt-4 flex gap-1">
+<div class="h-4 w-2 bg-primary/20 rounded-sm"></div>
+<div class="h-6 w-2 bg-primary/40 rounded-sm"></div>
+<div class="h-3 w-2 bg-primary/60 rounded-sm"></div>
+<div class="h-8 w-2 bg-primary rounded-sm"></div>
+<div class="h-5 w-2 bg-primary/70 rounded-sm"></div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container rounded-xl p-1 relative overflow-hidden group">
+<div class="bg-surface-container-lowest rounded-[10px] p-6 h-full transition-transform group-hover:-translate-y-1">
+<p class="text-label-sm text-outline uppercase tracking-widest mb-1">Active Threats Blocked</p>
+<p class="text-3xl font-bold text-error">2.4k</p>
+<p class="text-xs text-on-surface-variant mt-2">Real-time protection enabled</p>
+</div>
+</div>
+</section>
+</main>
+<footer class="w-full py-12 bg-zinc-50 border-t border-zinc-200/50">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 gap-4 max-w-screen-2xl mx-auto">
+<p class="text-xs font-inter text-zinc-500">© 2024 The Digital Atrium. All rights reserved.</p>
+<div class="flex items-center gap-6">
+<a class="text-xs font-inter text-zinc-500 hover:text-zinc-900 hover:underline transition-all" href="#">Privacy Policy</a>
+<a class="text-xs font-inter text-zinc-500 hover:text-zinc-900 hover:underline transition-all" href="#">Terms of Service</a>
+<a class="text-xs font-inter text-zinc-500 hover:text-zinc-900 hover:underline transition-all" href="#">Security</a>
+<a class="text-xs font-inter text-zinc-500 hover:text-zinc-900 hover:underline transition-all" href="#">Status</a>
+</div>
+</div>
+</footer>
+</body></html>
